@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_UILayoutHeadComponentPartial")
+
+<body class="blog-page">
+
+    @await Component.InvokeAsync("_UILayoutHeaderComponentPartial")
+
+    @RenderBody()
+
+    @await Component.InvokeAsync("_UILayoutFooterComponentPartial")
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+
+    @await Component.InvokeAsync("_UILayoutScriptComponentPartial")
+
+</body>
+
+</html>
