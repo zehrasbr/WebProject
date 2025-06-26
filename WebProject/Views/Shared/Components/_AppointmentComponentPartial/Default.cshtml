@@ -1,0 +1,60 @@
+﻿<section id="contact" class="contact section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up" style="margin-bottom: 10px;">
+        <h2>Randevu Al</h2>
+        <h5 class="mb-0">Sorularınız, talepleriniz veya görüşmek istediğiniz konular için randevu formumuzu doldurabilirsiniz.</h5>
+    </div><!-- End Section Title -->
+
+    <style>
+        .form-container {
+            padding-top: 0;
+            padding-bottom: 40px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .contact .section-title {
+            margin-bottom: 10px !important;
+        }
+    </style>
+
+    <div class="container form-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <label for="name-field" class="pb-2">Ad</label>
+                            <input type="text" name="name" id="name-field" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="surname-field" class="pb-2">Soyad</label>
+                            <input type="text" name="surname" id="surname-field" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email-field" class="pb-2">Email Adresi</label>
+                            <input type="email" name="email" id="email-field" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="date-field" class="pb-2">Tarih</label>
+                            <input type="datetime-local" name="date" id="date-field" class="form-control" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="message-field" class="pb-2">Açıklama</label>
+                            <textarea name="message" id="message-field" rows="6" class="form-control" required></textarea>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <div class="loading">Yükleniyor</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Randevu Kaydı Oluşturuldu.</div>
+                            <button type="submit" class="btn btn-primary mt-3">Randevu Oluştur</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- End Contact Form -->
+
+</section><!-- /Contact Section -->
