@@ -8,5 +8,17 @@ namespace WebProject.Controllers
         {
             return View();
         }
+        public IActionResult GetMore()
+        {
+            return View();
+        }
+        public IActionResult GetMore2()
+        {
+            return View();
+        }
+        public IActionResult GetMore3()
+        {
+            return View();
+        }
     }
 }

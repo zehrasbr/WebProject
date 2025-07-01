@@ -4,5 +4,14 @@
     Layout = "~/Views/UILayout/Index.cshtml";
 }
 
-
-@await Component.InvokeAsync("_PortfolioMainComponentPartial")
+<div class="page-title" data-aos="fade">
+    <div class="container">
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="/Default/Index/">Anasayfa</a></li>
+                <li class="current">Altyapı</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+@await Component.InvokeAsync("_DefaultPortfolioComponentPartial")

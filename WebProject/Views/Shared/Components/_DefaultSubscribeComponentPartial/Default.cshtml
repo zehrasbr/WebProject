@@ -1,25 +1,46 @@
 ﻿<!-- Subscribe Section -->
+<style>
+    .btn-get-started {
+        display: inline-block;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #0d6efd;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+    }
+
+        .btn-get-started:hover {
+            background-color: #084298;
+            color: #fff;
+            text-decoration: none;
+        }
+</style>
+
 <section id="subscribe" class="subscribe section">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-between align-items-center">
             <div class="col-lg-6">
                 <div class="cta-content" data-aos="fade-up" data-aos-delay="200">
-                    <h2>Subscribe to our newsletter</h2>
-                    <p>Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit.</p>
+                    <h2>Detaylı Bilgi</h2>
+                    <p>Ürünlerimiz hakkında detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
                     <form action="forms/newsletter.php" method="post" class="php-email-form cta-form" data-aos="fade-up" data-aos-delay="300">
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email Adres" aria-label="Email address" aria-describedby="button-subscribe">
-                            <button class="btn btn-primary" type="submit" id="button-subscribe">Subscribe</button>
+                            <div class="d-flex">
+                                <a href="/Contact/Index/" class="btn-get-started">İletişim</a>
+                            </div>
+                         
                         </div>
                         <div class="loading">Yükleniyor</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Your subscription request has been sent. Thank you!</div>
                     </form>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="cta-image" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="~/web/assets/img/cta/cta-1.webp" alt="" class="img-fluid">
+                    <img src="~/web/assets/img/cta/img12.png" alt="" class="img-fluid">
                 </div>
             </div>
         </div>

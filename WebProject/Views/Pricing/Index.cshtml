@@ -3,6 +3,16 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/UILayout/Index.cshtml";
 }
-
+<div class="page-title" data-aos="fade">
+    <div class="container">
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="/Default/Index/">Anasayfa</a></li>
+                <li class="current">Ürünlerimiz</li>
+            </ol>
+        </nav>
+    </div>
+</div>
 @await Component.InvokeAsync("_DefaultPricingComponentPartial")
+@await Component.InvokeAsync("_DefaultSubscribeComponentPartial") 
 
