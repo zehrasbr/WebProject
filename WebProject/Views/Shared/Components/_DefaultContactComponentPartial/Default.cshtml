@@ -1,4 +1,5 @@
-﻿    <!-- Contact Section -->
+﻿@model WebProject.Models.Email
+    <!-- Contact Section -->
 <section id="contact" class="contact section">
 
     <!-- Section Title -->
@@ -43,27 +44,27 @@
             </div>
 
             <div class="col-lg-7">
-                <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <form action="/Contact/Index/" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                     <div class="row gy-4">
 
                         <div class="col-md-6">
                             <label for="name-field" class="pb-2">Ad Soyad</label>
-                            <input type="text" name="name" id="name-field" class="form-control" required="">
+                            <input type="text" name="Name" id="Name" class="form-control" required="">
                         </div>
 
                         <div class="col-md-6">
                             <label for="email-field" class="pb-2">Mail Adresi</label>
-                            <input type="email" class="form-control" name="email" id="email-field" required="">
+                            <input type="email" class="form-control" name="Mail" id="Mail" required="">
                         </div>
 
                         <div class="col-md-12">
                             <label for="subject-field" class="pb-2">Konu</label>
-                            <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                            <input type="text" class="form-control" name="Subject" id="Subject" required="">
                         </div>
 
                         <div class="col-md-12">
                             <label for="message-field" class="pb-2">Açıklama</label>
-                            <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                            <textarea class="form-control" name="Description" rows="10" id="Description" required=""></textarea>
                         </div>
 
                         <div class="col-md-12 text-center">
