@@ -5,7 +5,11 @@
         <h2>Randevu Al</h2>
         <h5 class="mb-0">Sorularınız, talepleriniz veya görüşmek istediğiniz konular için randevu formumuzu doldurabilirsiniz.</h5>
     </div><!-- End Section Title -->
-
+    <style>
+        .flatpickr-calendar {
+            z-index: 1056 !important;
+        }
+    </style>
     <style>
         .form-container {
             padding-top: 0;
@@ -19,7 +23,6 @@
             margin-bottom: 10px !important;
         }
     </style>
-
     <div class="container form-container" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -37,9 +40,28 @@
                             <label for="email-field" class="pb-2">Email Adresi</label>
                             <input type="email" name="email" id="email-field" class="form-control" required>
                         </div>
-                        <div class="col-md-6">
+                       @*  <div class="col-md-6">
                             <label for="date-field" class="pb-2">Tarih</label>
                             <input type="datetime-local" name="date" id="date-field" class="form-control" required>
+                        </div> *@
+                        <div class="col-md-6">
+                            <label for="date-field" class="pb-2">Tarih</label>
+                            <input type="text" name="date" id="date-field" class="form-control" placeholder="Tarih seçiniz..." readonly data-bs-toggle="modal" data-bs-target="#calendarModal">
+                        </div>
+
+                        <!-- Modal (açılır pencere) -->
+                        <div class="modal fade" id="calendarModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content p-3">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Takvim</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="text" id="calendar-picker" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <label for="message-field" class="pb-2">Açıklama</label>
@@ -58,3 +80,55 @@
     </div><!-- End Contact Form -->
 
 </section><!-- /Contact Section -->
+
+<script>
+    const doluSaatler = [
+        "2025-07-03 10:00",
+        "2025-07-03 14:30",
+        "2025-07-04 09:00",
+        "2025-07-05 16:00"
+    ];
+
+    // Dolu saatleri Date objesine çeviriyoruz
+    const disableDates = doluSaatler.map(dt => new Date(dt));
+
+    const modalEl = document.getElementById("calendarModal");
+    let takvimInstance;
+
+    modalEl.addEventListener("shown.bs.modal", function () {
+        // Önce var ise önceki flatpickr'i yok et
+        if (takvimInstance) takvimInstance.destroy();
+
+        takvimInstance = flatpickr("#calendar-picker", {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            time_24hr: true,
+            minuteIncrement: 30,
+            disable: disableDates,
+
+            onChange: function (selectedDates, dateStr) {
+                // Tarih ve saati input'a yaz
+                document.getElementById("date-field").value = dateStr;
+            },
+
+            onClose: function (selectedDates, dateStr) {
+                if (dateStr) {
+                    // Modalı kapat
+                    const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                    if (modalInstance) {
+                        modalInstance.hide();
+
+                        // Backdrop'u manuel temizle (donma sorununa karşı)
+                        setTimeout(() => {
+                            document.body.classList.remove("modal-open");
+                            document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
+                        }, 300);
+                    }
+                }
+            }
+        });
+
+        // Takvimi modal açılır açılmaz otomatik göster
+        takvimInstance.open();
+    });
+</script>
