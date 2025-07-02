@@ -29,12 +29,37 @@ namespace WebProject.Controllers
                 mail.Subject = "Yeni Randevu Talebi";
                 mail.IsBodyHtml = true;
                 mail.Body = $@"
-                <h2>Yeni Randevu Talebi</h2>
-                <p><strong>Ad:</strong> {model.Name}</p>
-                <p><strong>Soyad:</strong> {model.Surname}</p>
-                <p><strong>Email:</strong> {model.Email}</p>
-                <p><strong>Tarih:</strong> {model.DateTime}</p>
-                <p><strong>Mesaj:</strong> {model.Message}</p>";
+<html>
+    <body style=""font-family: Arial, sans-serif; font-size: 14px; color: #333;"">
+        <h2>Yeni Randevu Talebi</h2>
+        <table style=""width: 100%; border-collapse: collapse;"">
+            <tr>
+                <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Ad:</strong></td>
+                <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Name}</td>
+            </tr>
+            <tr>
+                <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Soyad:</strong></td>
+                <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Surname}</td>
+            </tr>
+            <tr>
+                <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Email:</strong></td>
+                <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Email}</td>
+            </tr>
+            <tr>
+                <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Tarih:</strong></td>
+                <td style=""padding: 8px; border: 1px solid #ddd;"">{model.DateTime}</td>
+            </tr>
+            <tr>
+                <td colspan=""2"" style=""padding: 8px; border: 1px solid #ddd;"">
+                    <strong>Mesaj:</strong><br/>
+                    <div style=""white-space: pre-wrap;"">{model.Message}</div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+";
+
 
                 using (var smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
