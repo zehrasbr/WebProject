@@ -1,17 +1,151 @@
-﻿
+﻿@model WebProject.Models.Appointment
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/UILayout/Index.cshtml";
 }
-<div class="page-title" data-aos="fade">
-    <div class="container">
-        <nav class="breadcrumbs">
-            <ol>
-                <li><a href="/Default/Index/">Anasayfa</a></li>
-                <li class="current">Randevu Al</li>
-            </ol>
-        </nav>
-    </div>
-</div>
-@await Component.InvokeAsync("_AppointmentComponentPartial")
 
+<section id="contact" class="contact section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up" style="margin-bottom: 10px;">
+        <h2>Randevu Al</h2>
+        <h5 class="mb-0">Sorularınız, talepleriniz veya görüşmek istediğiniz konular için randevu formumuzu doldurabilirsiniz.</h5>
+    </div><!-- End Section Title -->
+
+    <style>
+        .form-container {
+            padding-top: 0;
+            padding-bottom: 40px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .flatpickr-calendar {
+            z-index: 1056 !important;
+        }
+
+        .loading, .error-message, .sent-message {
+            display: none !important;
+        }
+
+        body {
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+    <div class="container form-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <form action="/Appointment/Index/" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                    @Html.AntiForgeryToken()
+                    <div class="row gy-4">
+                        <div class="col-md-6">
+                            <label for="name-field" class="pb-2">Ad</label>
+                            <input type="text" name="Name" id="Name" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="surname-field" class="pb-2">Soyad</label>
+                            <input type="text" name="Surname" id="Surname" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email-field" class="pb-2">Email Adresi</label>
+                            <input type="email" name="Email" id="Email" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mx-auto">
+                            <label for="DateTime" class="pb-2">Tarih</label>
+                            <input type="text"
+                                   id="DateTime"
+                                   name="DateTime"
+                                   class="form-control"
+                                   placeholder="Tarih ve saat seçiniz"
+                                   readonly
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#datetimeModal" />
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="datetimeModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content p-3">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarih</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="text" id="datetime-picker" class="form-control" readonly />
+                                        <small class="text-muted mt-2 d-block">
+                                            <strong>Dolu saatler seçilemez.</strong>
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="message-field" class="pb-2">Açıklama</label>
+                            <textarea name="Message" id="Message" rows="6" class="form-control" required></textarea>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <div class="loading">Yükleniyor</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Randevu Kaydı Oluşturuldu.</div>
+
+                            <button type="submit">Randevu Oluştur</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div><!-- End Contact Form -->
+
+</section><!-- /Contact Section -->
+
+
+<script>
+    const doluSaatler = [
+        "2025-07-03 10:00",
+        "2025-07-03 14:00",
+        "2025-07-04 09:00",
+        "2025-07-10 16:00",
+        "2025-07-13 16:00",
+        "2025-07-17 16:00",
+        "2025-07-23 16:00"
+    ];
+
+    const disableDates = doluSaatler.map(dt => new Date(dt));
+
+    const modalEl = document.getElementById("datetimeModal");
+    let takvimInstance;
+
+    modalEl.addEventListener("shown.bs.modal", function () {
+        if (takvimInstance) takvimInstance.destroy();
+
+        takvimInstance = flatpickr("#datetime-picker", {
+            enableTime: true,
+            noCalendar: false,
+            dateFormat: "Y-m-d H:i",
+            time_24hr: true,
+            minuteIncrement: 60,
+            disable: disableDates,
+
+            onChange: function (selectedDates, dateStr) {
+                document.getElementById("DateTime").value = dateStr;
+            },
+
+            onClose: function (selectedDates, dateStr) {
+                if (dateStr) {
+                    const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                    if (modalInstance) {
+                        modalInstance.hide();
+
+                        setTimeout(() => {
+                            document.body.classList.remove("modal-open");
+                            document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
+                        }, 300);
+                    }
+                }
+            }
+        });
+        takvimInstance.open();
+    });
+</script>

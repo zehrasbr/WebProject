@@ -1,11 +1,19 @@
-﻿namespace WebProject.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebProject.Models
 {
     public class Email
     {
-        public int EmailId { get; set; }
+        [Required]
         public string Name { get; set; }
+
+        [Required, EmailAddress]
         public string Mail { get; set; }
+
+        [Required]
         public string Subject { get; set; }
+
+        [Required]
         public string Description { get; set; }
     }
 }

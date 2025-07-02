@@ -7,27 +7,73 @@ namespace WebProject.Controllers
 {
     public class ContactController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        public ActionResult Index()
         {
             return View();
         }
+
         [HttpPost]
-        public ActionResult Index(Email model)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Index(Email model)
         {
-            MailMessage mailim = new MailMessage();
-            mailim.To.Add("zehraisbr@gmail.com");
-            mailim.From = new MailAddress("zehraisbr@gmail.com");
-            mailim.Subject = "RealRemoteLab Sayfasından Mesajınız Var. " + model.Subject;
-            mailim.Body = "Sayın yetkili, " + model.Name + " kişisinden gelen mesajın içeriği aşağıdaki gibidir. <br>" + model.Description;
-            mailim.IsBodyHtml = true;
+            if (!ModelState.IsValid)
+                return View(model);
 
-            SmtpClient smtp = new SmtpClient();
-            smtp.Credentials = new NetworkCredential("zehraisbr@gmail.com", "pqghrzgqpoqnpykk");
-            smtp.Port = 587;
-            smtp.Host = "smtp.gmail.com";
-            smtp.EnableSsl = true;
-            return View(mailim);
+            try
+            {
+                var mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress("zehra.isbir@cyberverse.com.tr", "RealRemoteLab");
+                mailMessage.To.Add("zehraisbr@gmail.com");
+                mailMessage.Subject = model.Subject;
+                mailMessage.Body = $@"
+    <html>
+        <body style=""font-family: Arial, sans-serif; font-size: 14px; color: #333;"">
+            <h2>İletişim Formu Mesajı</h2>
+            <table style=""width: 100%; border-collapse: collapse;"">
+                <tr>
+                    <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Gönderen:</strong></td>
+                    <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Name}</td>
+                </tr>
+                <tr>
+                    <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Mail Adresi:</strong></td>
+                    <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Mail}</td>
+                </tr>
+                <tr>
+                    <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Konu:</strong></td>
+                    <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Subject}</td>
+                </tr>
+                <tr>
+                    <td colspan=""2"" style=""padding: 8px; border: 1px solid #ddd;"">
+                        <strong>Mesaj:</strong><br/>
+                        <div style=""white-space: pre-wrap;"">{model.Description}</div>
+                    </td>
+                </tr>
+            </table>
+        </body>
+    </html>
+";
+                mailMessage.IsBodyHtml = true;
+                //mailMessage.IsBodyHtml = false;
+
+                using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtpClient.Credentials = new NetworkCredential("zehraisbr@gmail.com", "kwjlsoznkbtgmwyo");
+                    smtpClient.EnableSsl = true;
+
+                    await smtpClient.SendMailAsync(mailMessage);
+                }
+
+                TempData["Message"] = "Mesajınız gönderildi.";
+                ModelState.Clear();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "Mail gönderilirken hata oluştu: " + ex.Message);
+                return View(model);
+            }
         }
-
     }
 }
+
