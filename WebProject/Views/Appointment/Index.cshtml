@@ -175,6 +175,10 @@
 
                     dateTimeInput.value = `${dateStr} ${slot.start}`;
                     dateTimeModal.hide();
+
+                    // Seçilen tarih-saatin booked listesine eklenmesi (sayfa yeniden yüklenene kadar)
+                    if (!bookedSlots[dateStr]) bookedSlots[dateStr] = [];
+                    bookedSlots[dateStr].push(slot.start);
                 });
 
                 timeSlotsContainer.appendChild(btn);
@@ -182,3 +186,4 @@
         }
     });
 </script>
+

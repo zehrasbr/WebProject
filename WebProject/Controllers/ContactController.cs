@@ -32,7 +32,7 @@ namespace WebProject.Controllers
             <h2>İletişim Formu Mesajı</h2>
             <table style=""width: 100%; border-collapse: collapse;"">
                 <tr>
-                    <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Gönderen:</strong></td>
+                    <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Gönderen Ad Soyad:</strong></td>
                     <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Name}</td>
                 </tr>
                 <tr>
@@ -43,11 +43,9 @@ namespace WebProject.Controllers
                     <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Konu:</strong></td>
                     <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Subject}</td>
                 </tr>
-                <tr>
-                    <td colspan=""2"" style=""padding: 8px; border: 1px solid #ddd;"">
-                        <strong>Mesaj:</strong><br/>
-                        <div style=""white-space: pre-wrap;"">{model.Description}</div>
-                    </td>
+  <tr>
+                    <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Açıklama:</strong></td>
+                    <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Description}</td>
                 </tr>
             </table>
         </body>
