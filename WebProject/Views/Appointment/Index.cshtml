@@ -127,7 +127,12 @@
 
     const bookedSlots = {
         "2025-07-08": ["09:00", "14:00"],
-        "2025-07-09": ["11:00", "15:00", "16:00"]
+        "2025-07-09": ["11:00", "15:00", "16:00"],
+        "2025-07-10": ["11:00", "15:00", "16:00"],
+        "2025-07-11": ["11:00", "13:00"],
+        "2025-07-12": ["09:00", "16:00"],
+        "2025-07-13": ["11:00", "17:00"],
+        "2025-07-14": ["09:00", "16:00"]
     };
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -176,7 +181,6 @@
                     dateTimeInput.value = `${dateStr} ${slot.start}`;
                     dateTimeModal.hide();
 
-                    // Seçilen tarih-saatin booked listesine eklenmesi (sayfa yeniden yüklenene kadar)
                     if (!bookedSlots[dateStr]) bookedSlots[dateStr] = [];
                     bookedSlots[dateStr].push(slot.start);
                 });

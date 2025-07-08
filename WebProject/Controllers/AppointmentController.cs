@@ -6,55 +6,26 @@ using System.Net;
 using System;
 using System.Text.Json;
 using WebProject.Models;
+using WebProject.Context;
 
 namespace WebProject.Controllers
 {
     public class AppointmentController : Controller
     {
-        private static Dictionary<string, List<string>> bookedSlots = new Dictionary<string, List<string>>
-        {
-            { "2025-07-08", new List<string> { "09:00", "14:00" } },
-            { "2025-07-09", new List<string> { "11:00", "15:00", "16:00" } }
-        };
+        private readonly MyDbContext _context;
 
-        [HttpGet]
-        public IActionResult Index()
+        public AppointmentController(MyDbContext context)
         {
-            ViewData["BookedSlotsJson"] = JsonSerializer.Serialize(bookedSlots);
-            return View();
+            _context = context;
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(Appointment model)
         {
             if (!ModelState.IsValid)
             {
-                ViewData["BookedSlotsJson"] = JsonSerializer.Serialize(bookedSlots);
                 return View(model);
             }
-
-            if (string.IsNullOrEmpty(model.DateTime) || model.DateTime.Length < 16)
-            {
-                ModelState.AddModelError("DateTime", "Lütfen geçerli bir tarih ve saat seçiniz.");
-                ViewData["BookedSlotsJson"] = JsonSerializer.Serialize(bookedSlots);
-                return View(model);
-            }
-
-            string date = model.DateTime.Substring(0, 10);
-            string hour = model.DateTime.Substring(11, 5);
-
-            if (bookedSlots.ContainsKey(date) && bookedSlots[date].Contains(hour))
-            {
-                ModelState.AddModelError("DateTime", "Seçilen tarih ve saat dolu, lütfen başka bir zaman seçiniz.");
-                ViewData["BookedSlotsJson"] = JsonSerializer.Serialize(bookedSlots);
-                return View(model);
-            }
-
-            if (!bookedSlots.ContainsKey(date))
-                bookedSlots[date] = new List<string>();
-
-            bookedSlots[date].Add(hour);
 
             try
             {
@@ -81,7 +52,6 @@ namespace WebProject.Controllers
                 {
                     smtp.Credentials = new NetworkCredential("zehraisbr@gmail.com", "kwjlsoznkbtgmwyo");
                     smtp.EnableSsl = true;
-
                     await smtp.SendMailAsync(mail);
                 }
 
@@ -91,7 +61,6 @@ namespace WebProject.Controllers
             catch (Exception ex)
             {
                 ModelState.AddModelError("", "Mail gönderilirken hata oluştu: " + ex.Message);
-                ViewData["BookedSlotsJson"] = JsonSerializer.Serialize(bookedSlots);
                 return View(model);
             }
         }
