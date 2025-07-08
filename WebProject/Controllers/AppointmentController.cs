@@ -63,7 +63,7 @@ namespace WebProject.Controllers
 
                 using (var smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtp.Credentials = new NetworkCredential("zehraisbr@gmail.com", "kwjlsoznkbtgmwyo"); 
+                    smtp.Credentials = new NetworkCredential("zehraisbr@gmail.com", "kwjlsoznkbtgmwyo");
                     smtp.EnableSsl = true;
 
                     await smtp.SendMailAsync(mail);
