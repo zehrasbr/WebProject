@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using System;
+using WebProject;
+using WebProject.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+//builder.Services.AddDbContext<RRLContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 
 // Configure the HTTP request pipeline.
