@@ -11,7 +11,9 @@ namespace WebProject.Models
         public string Mail { get; set; }
 
         [Required]
-        public string Subject { get; set; }
+        public string Subject { get; set; }        
+        [Required]
+        public string SubjectType { get; set; }
 
         [Required]
         public string Description { get; set; }

@@ -8,6 +8,14 @@
     body {
         font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
+
+    #SubjectType {
+        height: calc(1.5em + 0.75rem + 2px);
+    }
+
+    .form-control, .form-select {
+        border-radius: 12px !important;
+    }
 </style>
 <section id="contact" class="contact section">
 
@@ -59,23 +67,37 @@
                     <div class="row gy-4">
 
                         <div class="col-md-6">
-                            <label for="name-field" class="pb-2">Ad Soyad</label>
-                            <input type="text" name="Name" id="Name" class="form-control" required="">
+                            <label for="Name" class="pb-2">Ad Soyad</label>
+                            <input type="text" name="Name" id="Name" class="form-control" required />
                         </div>
 
                         <div class="col-md-6">
-                            <label for="email-field" class="pb-2">Mail Adresi</label>
-                            <input type="email" class="form-control" name="Mail" id="Mail" required="">
+                            <label for="Mail" class="pb-2">Mail Adresi</label>
+                            <input type="email" name="Mail" id="Mail" class="form-control" required />
+                        </div>
+
+                        <div class="col-md-8">
+                            <label for="Subject" class="pb-2">Konu</label>
+                            <input type="text" name="Subject" id="Subject" class="form-control" required />
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="SubjectType" class="pb-2">Konu Tipi</label>
+                            <select name="SubjectType" id="SubjectType" class="form-select" required>
+                                <option value="" disabled selected>Seçiniz</option>
+                                <option value="Öneri">Öneri</option>
+                                <option value="Şikayet">Şikayet</option>
+                                <option value="İstek">İstek</option>
+                                <option value="Bilgi Talebi">Bilgi Talebi</option>
+                                <option value="Teknik Destek">Teknik Destek</option>
+                                <option value="İşbirliği">İşbirliği</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
                         </div>
 
                         <div class="col-md-12">
-                            <label for="subject-field" class="pb-2">Konu</label>
-                            <input type="text" class="form-control" name="Subject" id="Subject" required="">
-                        </div>
-
-                        <div class="col-md-12">
-                            <label for="message-field" class="pb-2">Açıklama</label>
-                            <textarea class="form-control" name="Description" rows="10" id="Description" required=""></textarea>
+                            <label for="Description" class="pb-2">Açıklama</label>
+                            <textarea name="Description" id="Description" rows="10" class="form-control" required></textarea>
                         </div>
 
                         <div class="col-md-12 text-center">
@@ -83,13 +105,13 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Mesajınız Gönderildi</div>
 
-                            <form onsubmit="alert('Mesaj gönderildi!')">
-                                <button type="submit">Mesaj Gönder</button>
-                            </form>
+                            <button type="submit" class="btn btn-primary mt-3">Mesaj Gönder</button>
                         </div>
 
                     </div>
                 </form>
+
+
             </div>
 
         </div>

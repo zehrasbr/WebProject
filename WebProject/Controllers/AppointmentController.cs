@@ -33,7 +33,7 @@ namespace WebProject.Controllers
                 mailMessage.Body = $@"
     <html>
         <body style=""font-family: Arial, sans-serif; font-size: 14px; color: #333;"">
-            <h2>Randevu Talep Formu</h2>
+            <h2>RealRemoteLab Randevu Talebi</h2>
             <table style=""width: 100%; border-collapse: collapse;"">
                 <tr>
                     <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Gönderen Ad:</strong></td>

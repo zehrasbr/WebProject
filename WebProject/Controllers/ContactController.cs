@@ -29,7 +29,7 @@ namespace WebProject.Controllers
                 mailMessage.Body = $@"
     <html>
         <body style=""font-family: Arial, sans-serif; font-size: 14px; color: #333;"">
-            <h2>İletişim Formu Mesajı</h2>
+            <h2>RealRemoteLab İletişim Mesajı</h2>
             <table style=""width: 100%; border-collapse: collapse;"">
                 <tr>
                     <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Gönderen Ad Soyad:</strong></td>
@@ -42,8 +42,12 @@ namespace WebProject.Controllers
                 <tr>
                     <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Konu:</strong></td>
                     <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Subject}</td>
+                </tr>   
+                <tr>
+                    <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Konu Tipi:</strong></td>
+                    <td style=""padding: 8px; border: 1px solid #ddd;"">{model.SubjectType}</td>
                 </tr>
-  <tr>
+                <tr>
                     <td style=""padding: 8px; border: 1px solid #ddd;""><strong>Açıklama:</strong></td>
                     <td style=""padding: 8px; border: 1px solid #ddd;"">{model.Description}</td>
                 </tr>

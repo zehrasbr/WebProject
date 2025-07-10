@@ -5,7 +5,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 <section id="contact" class="contact section">
-    <div class="container section-title" style="margin-bottom: 10px;">
+    <div class="container section-title mb-3">
         <h2>Randevu Al</h2>
         <h5 class="mb-0">Sorularınız, talepleriniz veya görüşmek istediğiniz konular için randevu formumuzu doldurabilirsiniz.</h5>
     </div>
@@ -20,6 +20,7 @@
         .loading, .error-message, .sent-message {
             display: none !important;
         }
+
         #calendar {
             max-width: 600px;
             margin: 20px auto 10px auto;
@@ -32,10 +33,25 @@
         .fc-daygrid-day-number {
             color: black;
             font-weight: bold;
+            text-decoration: none !important; /* underline kaldır */
         }
 
+        .fc-col-header-cell a {
+            text-decoration: none !important; /* gün isimlerindeki underline'ı kaldır */
+        }
+
+        /* Takvim kutularına kare çizgi ekle */
         .fc-daygrid-day {
             height: 100px;
+            border: 1px solid #ddd !important;
+        }
+
+        .fc-col-header-cell {
+            border: 1px solid #ddd !important;
+        }
+
+        .fc-scrollgrid-sync-table {
+            border-collapse: collapse !important;
         }
 
         #timeSlotsContainer {
@@ -47,7 +63,7 @@
             }
 
                 #timeSlotsContainer button.active {
-                    background-color: #0d6efd;
+                    background-color: royalblue;
                     color: white;
                 }
 
@@ -56,25 +72,29 @@
                     color: #888 !important;
                     cursor: not-allowed;
                 }
+
+        .form-control, .form-select {
+            border-radius: 12px !important;
+        }
     </style>
 
     <div class="container form-container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form action="@Url.Action("Index", "Appointment")" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200" novalidate>
+                <form action="@Url.Action("Index", "Appointment")" method="post" class="php-email-form" novalidate>
                     @Html.AntiForgeryToken()
                     <div class="row gy-4">
                         <div class="col-md-6">
                             <label>Ad</label>
-                            <input type="text" name="Name" id="Name" class="form-control" required />
+                            <input type="text" name="Name" class="form-control" required />
                         </div>
                         <div class="col-md-6">
                             <label>Soyad</label>
-                            <input type="text" name="Surname" id="Surname" class="form-control" required />
+                            <input type="text" name="Surname" class="form-control" required />
                         </div>
                         <div class="col-md-6">
                             <label>Email</label>
-                            <input type="email" name="Email" id="Email" class="form-control" required />
+                            <input type="email" name="Email" class="form-control" required />
                         </div>
                         <div class="col-md-6">
                             <label>Tarih ve Saat</label>
@@ -82,25 +102,21 @@
                         </div>
                         <div class="col-md-12">
                             <label>Açıklama</label>
-                            <textarea name="Message" id="Message" rows="6" class="form-control" required></textarea>
+                            <textarea name="Message" rows="6" class="form-control" required></textarea>
                         </div>
-
                         <div class="col-md-12 text-center">
                             <div class="loading">Yükleniyor</div>
                             <div class="error-message"></div>
                             <div class="sent-message">Randevu Oluşturuldu</div>
-
-                        <div class="col-md-12 mt-3">
-                            <button type="submit" class="btn btn-primary">Randevu Oluştur</button>
+                            <button type="submit" class="btn btn-primary mt-3">Randevu Oluştur</button>
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
 
-    <!-- Tarih ve Saat Modalı -->
+    <!-- Modal -->
     <div class="modal fade" id="dateTimeModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content p-3">
@@ -146,24 +162,27 @@
         const calendarEl = document.getElementById('calendar');
         const timeSlotsContainer = document.getElementById('timeSlotsContainer');
         const dateTimeInput = document.getElementById('DateTime');
-        const dateTimeModalEl = document.getElementById('dateTimeModal');
 
-        if (!calendarEl || !timeSlotsContainer || !dateTimeInput || !dateTimeModalEl) return;
-
-        const dateTimeModal = new bootstrap.Modal(dateTimeModalEl);
         let selectedDate = null;
+        let calendar = null;
 
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            height: 500,
-            selectable: true,
-            dateClick: function (info) {
-                selectedDate = info.dateStr;
-                renderTimeSlots(selectedDate);
+        const modalEl = document.getElementById('dateTimeModal');
+        const modal = new bootstrap.Modal(modalEl);
+
+        modalEl.addEventListener('shown.bs.modal', function () {
+            if (!calendar) {
+                calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    height: 500,
+                    selectable: true,
+                    dateClick: function (info) {
+                        selectedDate = info.dateStr;
+                        renderTimeSlots(selectedDate);
+                    }
+                });
             }
+            calendar.render();
         });
-
-        calendar.render();
 
         function renderTimeSlots(dateStr) {
             timeSlotsContainer.innerHTML = '';
@@ -187,8 +206,8 @@
                     document.querySelectorAll('#timeSlotsContainer button').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
-                    dateTimeInput.value = `${dateStr} ${slot.start}`;
-                    dateTimeModal.hide();
+                    dateTimeInput.value = `${dateStr} ${slot.start} - ${slot.end}`;
+                    modal.hide();
 
                     if (!bookedSlots[dateStr]) bookedSlots[dateStr] = [];
                     bookedSlots[dateStr].push(slot.start);
