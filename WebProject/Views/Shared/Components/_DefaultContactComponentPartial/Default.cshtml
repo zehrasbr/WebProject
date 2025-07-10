@@ -1,5 +1,6 @@
 ﻿@model WebProject.Models.Email
-    <!-- Contact Section -->
+
+<!-- Contact Section -->
 <style>
     .loading, .error-message, .sent-message {
         display: none !important;
@@ -17,6 +18,7 @@
         border-radius: 12px !important;
     }
 </style>
+
 <section id="contact" class="contact section">
 
     <!-- Section Title -->
@@ -62,7 +64,7 @@
 
             <div class="col-lg-7">
 
-                <form action="/Contact/Index/" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+                <form id="contactForm" action="/Contact/Index/" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
                     @Html.AntiForgeryToken()
                     <div class="row gy-4">
 
@@ -111,7 +113,6 @@
                     </div>
                 </form>
 
-
             </div>
 
         </div>
@@ -119,3 +120,20 @@
     </div>
 
 </section><!-- /Contact Section -->
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Başarılı',
+            text: 'Mesajınız gönderildi!',
+            confirmButtonText: 'Tamam'
+        }).then(() => {
+            e.target.submit();
+        });
+
+        e.preventDefault();
+    });
+</script>

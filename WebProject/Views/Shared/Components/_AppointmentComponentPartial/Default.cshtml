@@ -11,6 +11,7 @@
     </div>
 
     <style>
+        /* ... aynı css kodlar ... */
         html, body {
             height: 100%;
             margin: 0;
@@ -33,17 +34,17 @@
         .fc-daygrid-day-number {
             color: black;
             font-weight: bold;
-            text-decoration: none !important; /* underline kaldır */
+            text-decoration: none !important;
         }
 
         .fc-col-header-cell a {
-            text-decoration: none !important; /* gün isimlerindeki underline'ı kaldır */
+            text-decoration: none !important;
         }
 
-        /* Takvim kutularına kare çizgi ekle */
         .fc-daygrid-day {
             height: 100px;
             border: 1px solid #ddd !important;
+            position: relative;
         }
 
         .fc-col-header-cell {
@@ -81,7 +82,7 @@
     <div class="container form-container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form action="@Url.Action("Index", "Appointment")" method="post" class="php-email-form" novalidate>
+                <form id="appointmentForm" action="@Url.Action("Index", "Appointment")" method="post" class="php-email-form" novalidate>
                     @Html.AntiForgeryToken()
                     <div class="row gy-4">
                         <div class="col-md-6">
@@ -137,6 +138,8 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const timeSlots = [
@@ -165,6 +168,7 @@
 
         let selectedDate = null;
         let calendar = null;
+        let events = [];
 
         const modalEl = document.getElementById('dateTimeModal');
         const modal = new bootstrap.Modal(modalEl);
@@ -176,8 +180,52 @@
                     height: 500,
                     selectable: true,
                     dateClick: function (info) {
+                        if (selectedDate && selectedDate !== info.dateStr) {
+                            const existingEventId = `event-${selectedDate}`;
+                            const existingEvent = calendar.getEventById(existingEventId);
+                            if (existingEvent) {
+                                existingEvent.remove();
+                                events = events.filter(e => e.id !== existingEventId);
+                                dateTimeInput.value = '';
+                            }
+                        }
+
                         selectedDate = info.dateStr;
                         renderTimeSlots(selectedDate);
+                    },
+                    events: events,
+                    eventClick: function (info) {
+                        if (confirm(`"${info.event.title.replace(/\n/g, ' ')}" saatini kaldırmak istediğinize emin misiniz?`)) {
+                            info.event.remove();
+
+                            const date = info.event.startStr.slice(0, 10);
+                            const time = info.event.title.split('\n')[0];
+
+                            events = events.filter(e => e.id !== info.event.id);
+
+                            if (selectedDate === date) {
+                                selectedDate = null;
+                                renderTimeSlots(null);
+                            }
+
+                            if (dateTimeInput.value.startsWith(date) && dateTimeInput.value.includes(time)) {
+                                dateTimeInput.value = '';
+                            }
+                        }
+                    },
+                    eventContent: function (arg) {
+                        const timeRange = arg.event.title.split(' - ');
+                        const innerHtml = document.createElement('div');
+                        innerHtml.style.whiteSpace = 'pre-line';
+                        innerHtml.style.fontSize = '0.9em';
+                        innerHtml.style.lineHeight = '1.2em';
+                        innerHtml.style.textAlign = 'center';
+                        innerHtml.style.color = 'royalblue';
+                        innerHtml.style.fontWeight = 'bold';
+
+                        innerHtml.textContent = timeRange[0] + '\n-\n' + timeRange[1];
+
+                        return { domNodes: [innerHtml] };
                     }
                 });
             }
@@ -191,14 +239,13 @@
             const bookedForDate = bookedSlots[dateStr] || [];
 
             timeSlots.forEach(slot => {
-                const isBooked = bookedForDate.includes(slot.start);
-
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = 'btn btn-outline-primary';
                 btn.style.minWidth = '110px';
                 btn.textContent = `${slot.start} - ${slot.end}`;
-                btn.disabled = isBooked;
+
+                btn.disabled = bookedForDate.includes(slot.start);
 
                 btn.addEventListener('click', () => {
                     if (btn.disabled) return;
@@ -206,15 +253,56 @@
                     document.querySelectorAll('#timeSlotsContainer button').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
-                    dateTimeInput.value = `${dateStr} ${slot.start} - ${slot.end}`;
-                    modal.hide();
+                    if (selectedDate && calendar) {
+                        const existingEventId = `event-${selectedDate}`;
+                        const existingEvent = calendar.getEventById(existingEventId);
+                        if (existingEvent) {
+                            existingEvent.remove();
+                            events = events.filter(e => e.id !== existingEventId);
+                        }
+                    }
 
-                    if (!bookedSlots[dateStr]) bookedSlots[dateStr] = [];
-                    bookedSlots[dateStr].push(slot.start);
+                    dateTimeInput.value = `${dateStr} ${slot.start} - ${slot.end}`;
+
+                    const startDateTime = new Date(dateStr + 'T' + slot.start);
+                    const endDateTime = new Date(dateStr + 'T' + slot.end);
+
+                    const eventId = `event-${dateStr}`;
+
+                    const newEvent = {
+                        id: eventId,
+                        title: `${slot.start} - ${slot.end}`,
+                        start: startDateTime.toISOString(),
+                        end: endDateTime.toISOString(),
+                        allDay: false,
+                        backgroundColor: 'royalblue',
+                        borderColor: 'royalblue',
+                        textColor: 'white'
+                    };
+
+                    events.push(newEvent);
+                    calendar.addEvent(newEvent);
+
+                    modal.hide();
                 });
 
                 timeSlotsContainer.appendChild(btn);
             });
         }
+
+        document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Başarılı',
+                text: 'Randevu oluşturuldu!',
+                confirmButtonText: 'Tamam'
+            }).then(() => {
+                e.target.submit();
+            });
+
+            e.preventDefault();
+        });
+
     });
 </script>
+
