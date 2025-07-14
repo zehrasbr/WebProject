@@ -1,4 +1,6 @@
 ﻿@model WebProject.Models.Email
+@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
 
 <!-- Contact Section -->
 <style>
@@ -23,8 +25,8 @@
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>İletİşİm</h2>
-        <h5 class="mb-0">Size en iyi şekilde yardımcı olabilmemiz için tüm soru, öneri veya taleplerinizi aşağıdaki iletişim formunu kullanarak bize iletebilirsiniz.</h5>
+        <h2>@localizer["ContactTitle"]</h2>
+        <h5 class="mb-0">@localizer["ContactSubtitle"]</h5>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -32,33 +34,33 @@
         <div class="row gy-4">
 
             <div class="col-lg-5">
-
                 <div class="info-wrap">
+
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
                         <i class="bi bi-geo-alt flex-shrink-0"></i>
                         <div>
-                            <h3>Adres</h3>
+                            <h3>@localizer["AddressTitle"]</h3>
                             <p>A108 Adam Street, New York, NY 535022</p>
                         </div>
-                    </div><!-- End Info Item -->
+                    </div>
 
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                         <i class="bi bi-telephone flex-shrink-0"></i>
                         <div>
-                            <h3>Telefon Numarası</h3>
+                            <h3>@localizer["PhoneTitle"]</h3>
                             <p>+1 5589 55488 55</p>
                         </div>
-                    </div><!-- End Info Item -->
+                    </div>
 
                     <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
                         <i class="bi bi-envelope flex-shrink-0"></i>
                         <div>
-                            <h3>Mail Adresi</h3>
+                            <h3>@localizer["EmailTitle"]</h3>
                             <p>info@realremotelab.com.tr</p>
                         </div>
-                    </div><!-- End Info Item -->
+                    </div>
 
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=..." frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -69,45 +71,45 @@
                     <div class="row gy-4">
 
                         <div class="col-md-6">
-                            <label for="Name" class="pb-2">Ad Soyad</label>
+                            <label for="Name" class="pb-2">@localizer["FullNameLabel"]</label>
                             <input type="text" name="Name" id="Name" class="form-control" required />
                         </div>
 
                         <div class="col-md-6">
-                            <label for="Mail" class="pb-2">Mail Adresi</label>
+                            <label for="Mail" class="pb-2">@localizer["EmailLabel"]</label>
                             <input type="email" name="Mail" id="Mail" class="form-control" required />
                         </div>
 
                         <div class="col-md-8">
-                            <label for="Subject" class="pb-2">Konu</label>
+                            <label for="Subject" class="pb-2">@localizer["SubjectLabel"]</label>
                             <input type="text" name="Subject" id="Subject" class="form-control" required />
                         </div>
 
                         <div class="col-md-4">
-                            <label for="SubjectType" class="pb-2">Konu Tipi</label>
+                            <label for="SubjectType" class="pb-2">@localizer["SubjectTypeLabel"]</label>
                             <select name="SubjectType" id="SubjectType" class="form-select" required>
-                                <option value="" disabled selected>Seçiniz</option>
-                                <option value="Öneri">Öneri</option>
-                                <option value="Şikayet">Şikayet</option>
-                                <option value="İstek">İstek</option>
-                                <option value="Bilgi Talebi">Bilgi Talebi</option>
-                                <option value="Teknik Destek">Teknik Destek</option>
-                                <option value="İşbirliği">İşbirliği</option>
-                                <option value="Diğer">Diğer</option>
+                                <option value="" disabled selected>@localizer["SelectOption"]</option>
+                                <option value="Suggestion">@localizer["SubjectOption_Suggestion"]</option>
+                                <option value="Complaint">@localizer["SubjectOption_Complaint"]</option>
+                                <option value="Request">@localizer["SubjectOption_Request"]</option>
+                                <option value="InfoRequest">@localizer["SubjectOption_InfoRequest"]</option>
+                                <option value="TechnicalSupport">@localizer["SubjectOption_TechSupport"]</option>
+                                <option value="Collaboration">@localizer["SubjectOption_Collaboration"]</option>
+                                <option value="Other">@localizer["SubjectOption_Other"]</option>
                             </select>
                         </div>
 
                         <div class="col-md-12">
-                            <label for="Description" class="pb-2">Açıklama</label>
+                            <label for="Description" class="pb-2">@localizer["DescriptionLabel"]</label>
                             <textarea name="Description" id="Description" rows="10" class="form-control" required></textarea>
                         </div>
 
                         <div class="col-md-12 text-center">
-                            <div class="loading">Yükleniyor</div>
+                            <div class="loading">@localizer["Loading"]</div>
                             <div class="error-message"></div>
-                            <div class="sent-message">Mesajınız Gönderildi</div>
+                            <div class="sent-message">@localizer["MessageSent"]</div>
 
-                            <button type="submit" class="btn btn-primary mt-3">Mesaj Gönder</button>
+                            <button type="submit" class="btn btn-primary mt-3">@localizer["SendMessageButton"]</button>
                         </div>
 
                     </div>
@@ -127,9 +129,9 @@
     document.getElementById('contactForm').addEventListener('submit', function (e) {
         Swal.fire({
             icon: 'success',
-            title: 'Başarılı',
-            text: 'Mesajınız gönderildi!',
-            confirmButtonText: 'Tamam'
+            title: '@localizer["SuccessTitle"]',
+            text: '@localizer["SuccessMessage"]',
+            confirmButtonText: '@localizer["OkButton"]'
         }).then(() => {
             e.target.submit();
         });

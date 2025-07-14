@@ -1,4 +1,6 @@
 ﻿@model WebProject.Models.Email
+@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/UILayout/Index.cshtml";
@@ -7,8 +9,8 @@
     <div class="container">
         <nav class="breadcrumbs">
             <ol>
-                <li><a href="/Default/Index/">Anasayfa</a></li>
-                <li class="current">İletişim</li>
+                <li><a href="/Default/Index/">@localizer["Home"]</a></li>
+                <li class="current">@localizer["Contact"]</li>
             </ol>
         </nav>
     </div>

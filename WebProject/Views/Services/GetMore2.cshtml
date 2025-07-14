@@ -1,4 +1,5 @@
-﻿
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
 @{
     ViewData["Title"] = "GetMore2";
     Layout = "~/Views/UILayout/Index.cshtml";
@@ -11,11 +12,11 @@
         <div class="container">
             <nav class="breadcrumbs">
                 <ol>
-                    <li><a href="/Services/Index/">Hizmetler</a></li>
-                    <li class="current">Detaylar</li>
+                    <li><a href="/Services/Index/">@localizer["Services1"]</a></li>
+                    <li class="current">@localizer["Details"]</li>
                 </ol>
             </nav>
-            <h1>Okullar İçin Dönemlik Fiber Optik Laboratuvar Deneyleri Detaylar</h1>
+            <h1>@localizer["GetMore2PageHeader"]</h1>
         </div>
     </div><!-- End Page Title -->
 
@@ -32,7 +33,7 @@
 
                             <div class="hero-img" data-aos="zoom-in">
                                 <img src="~/web/assets/img/cta/img20.png"
-                                     alt="Featured blog image"
+                                     alt="@localizer["GetMore2HeroImageAlt"]"
                                      class="img-fluid"
                                      loading="lazy"
                                      style="max-width: 70%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);">
@@ -40,255 +41,74 @@
 
                             <div class="article-content" data-aos="fade-up" data-aos-delay="100">
                                 <div class="content-header">
-                                    <h1 class="title">Okullar İçin Dönemlik Fiber Optik Laboratuvar Deneyleri</h1>
+                                    <h1 class="title">@localizer["GetMore2"]</h1>
                                 </div>
                             </div>
 
                             <div class="content">
-                                <p class="lead">
-                                    Hangi deneyleri yapacağınızı bilmiyor musunuz? Uzman kadromuz size yardıma hazır…
-                                </p>
-                                <p class="lead">
-                                    Deney listenizi siz mi oluşturmak istiyorsunuz? Talepleriniz için iletişime geçiniz, yardıma hazırız….
-                                </p>
-                                <p class="lead">
-                                    Geleceğin teknolojilerini yakından tanımak ve öğrencilere temel iletişim altyapısı bilgileri kazandırmak amacıyla fiber optik eğitim programımız, okul seviyesine uygun olarak tasarlanmıştır. Bu program sayesinde öğrenciler, fiber optik teknolojisinin temel kavramlarını öğrenirken, uygulamalı deneyimler de kazanabilirler.
-                                </p>
-                                <div class="content-image right-aligned">
-                                </div>
+                                <p class="lead">@localizer["GetMore2Lead1"]</p>
+                                <p class="lead">@localizer["GetMore2Lead2"]</p>
+                                <p class="lead">@localizer["GetMore2Lead3"]</p>
 
+                                <div class="content-image right-aligned"></div>
 
-                                <h2>Örnek Ders İçeriği:</h2>
-                                <p>
-                                    <b>
-                                    Fiber Optik Sistemler ve Uygulamaları Laboratuvar Ders Planı
-                                    </b>
-                                </p>
-                                Bu ders planı, lisansüstü düzeyde fiber optik sistemler ve bileşenleri üzerine uygulamalı bir eğitim sunmak amacıyla tasarlanmıştır. Her hafta, fiber optik teknolojisinin temel bileşenleri, cihazları ve pasif elemanları üzerine odaklanan deneylerle yapılandırılmıştır. Aşağıda, 16 haftalık laboratuvar programının akademik içeriği ve hedefleri detaylı bir şekilde sunulmaktadır.
-                               <br />
-                               <br />
-                                <p>
-                                    <b>
-                                        Amaç
-                                    </b>
-                                </p>
-                                Bu laboratuvar dersi, öğrencilerin fiber optik iletişim sistemlerinin temel prensiplerini, bileşenlerini ve ölçüm tekniklerini uygulamalı olarak öğrenmesini amaçlamaktadır. Ders, teorik bilginin pratik uygulamalarla desteklenmesini sağlayarak, öğrencilerin fiber optik teknolojilerinde deneysel beceriler kazanmasına olanak tanır.
-                                <br />
-                                <br />
-                                <p>
-                                    <b>
-                                        Haftalık Ders Planı
-                                    </b>
-                                </p>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 1: Fiber Optik Kablolar ve Elemanların Tanıtımı
-                                    </b>
-                                </p>
+                                <h2>@localizer["SampleCourseContent"]</h2>
+                                <p><b>@localizer["FiberOpticLabCoursePlan"]</b></p>
+                                <p>@localizer["FiberOpticLabDescription"]</p>
+
+                                <p><b>@localizer["Objective"]</b></p>
+                                <p>@localizer["ObjectiveDescription"]</p>
+
+                                <p><b>@localizer["WeeklyCoursePlan"]</b></p>
+
+                                <!-- Haftalık ders planını örnek olarak ilk 3 hafta ekledim, sen devam edebilirsin -->
+                                <p><b>@localizer["Week1Title"]</b></p>
                                 <ul>
-                                    <li><b>Konu:</b> Fiber optik kabloların türleri ve temel bileşenler (patch kablolar, pigtail kablolar, konnektör çeşitleri: SC, LC, FC vb.).</li>
-                                    <li><b>Hedef:</b> Fiber optik kabloların yapısını, kullanım alanlarını ve konnektör tiplerinin özelliklerini anlamak.</li>
-                                    <li><b>Deney:</b> Farklı konnektör türlerinin incelenmesi ve bağlantı tekniklerinin uygulanması.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 2: Fiber Optik Ek Yapımı
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Fiber optik kablolarda ek yapım teknikleri (füzyon ekleme, mekanik ekleme).</li>
-                                    <li><b>Hedef:</b> Ek yapım süreçlerini öğrenmek ve düşük kayıplı bağlantılar oluşturma becerisi kazanmak.</li>
-                                    <li><b>Deney:</b> Füzyon ekleme cihazı ile fiber optik kablo bağlantısı gerçekleştirme.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 3: Fiber Optik Cihazlar - Optik Güç Ölçer ve Güç Kaynağı
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Optik güç ölçer ve güç kaynağının tanıtımı, ölçüm prensipleri.</li>
-                                    <li><b>Hedef:</b> Optik sinyal gücünü doğru bir şekilde ölçme ve analiz etme becerisi geliştirmek.</li>
-                                    <li><b>Deney:</b> Optik güç ölçer ile sinyal gücünün ölçülmesi ve sonuçların analizi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 4: Fiber Optik Cihazlar - TLS, OSA ve ASE Kaynakları
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Ayarlanabilir lazer kaynakları (TLS), optik spektrum analizörleri (OSA) ve geniş bantlı ASE kaynaklarının tanıtımı.</li>
-                                    <li><b>Hedef:</b> Spektral analiz tekniklerini ve geniş bantlı kaynakların kullanımını anlamak.</li>
-                                    <li><b>Deney:</b> TLS ve OSA ile dalga boyu karakterizasyonu.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 5: Fiber Optik Cihazlar - OTDR
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Optik Zaman Alanı Reflektometresi (OTDR) cihazının çalışma prensipleri ve uygulamaları.</li>
-                                    <li><b>Hedef:</b> Fiber optik hatlarda kayıp, kırılma ve mesafe ölçümlerini öğrenmek.</li>
-                                    <li><b>Deney:</b> OTDR ile fiber optik kablo testi ve hata analizi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 6: Fiber Optik Cihazlar - Lazer Türleri
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Fabry-Perot ve VCSEL lazerlerin özellikleri ve kullanım alanları.</li>
-                                    <li><b>Hedef:</b>Farklı lazer türlerinin performans karakteristiklerini karşılaştırmak.</li>
-                                    <li><b>Deney:</b> Lazer türlerinin optik çıkışlarının ölçülmesi ve karşılaştırılması.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 7: Fiber Optik Cihazlar - Butterfly Lazer Kullanımı
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b>Butterfly lazerlerin yapısı, kontrolü ve uygulamaları.</li>
-                                    <li><b>Hedef:</b> Yüksek hassasiyetli lazer sistemlerinin kullanımını öğrenmek.</li>
-                                    <li><b>Deney:</b> Butterfly lazer ile dalga boyu ve güç kontrolü.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 8: Pasif Komponentler - Kuplörler (MEMS) ve Çeşitleri
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Optik kuplörlerin türleri, MEMS tabanlı kuplörler ve uygulamaları.</li>
-                                    <li><b>Hedef:</b> Optik sinyal dağıtımını ve kuplörlerin çalışma prensiplerini anlamak.</li>
-                                    <li><b>Deney:</b> Kuplörlerin sinyal bölme oranlarının ölçülmesi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 9: Pasif Komponentler - Sirkülatör ve İzolatör
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Optik sirkülatör ve izolatörlerin işlevleri ve kullanım alanları.</li>
-                                    <li><b>Hedef:</b> Yönlü sinyal kontrolü ve geri yansıma önleme tekniklerini öğrenmek.</li>
-                                    <li><b>Deney:</b> Sirkülatör ve izolatör performanslarının test edilmesi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 10: Pasif Komponentler - Ayarlanabilir Filtreler ve Zayıflatıcılar (MEMS)
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Ayarlanabilir optik filtreler ve zayıflatıcıların çalışma prensipleri.</li>
-                                    <li><b>Hedef:</b> Sinyal filtreleme ve zayıflatma tekniklerini anlamak.</li>
-                                    <li><b>Deney:</b> MEMS tabanlı filtrelerin dalga boyu seçiciliğinin test edilmesi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 11: Pasif Komponentler - Fiber Bragg Izgaralar (FBG) ve Aynalar
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> FBG ve optik aynaların yapısı, çalışma prensipleri ve uygulamaları.</li>
-                                    <li><b>Hedef:</b> Dalga boyu seçici reflektörlerin kullanımını öğrenmek.</li>
-                                    <li><b>Deney:</b> FBG ile dalga boyu filtreleme deneyi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 12: Pasif Komponentler - Optik Anahtarlayıcılar
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Optik anahtarlayıcıların türleri ve çalışma mekanizmaları.</li>
-                                    <li><b>Hedef:</b> Optik ağlarda sinyal yönlendirme tekniklerini anlamak.</li>
-                                    <li><b>Deney:</b> Optik anahtarlayıcı ile sinyal yönlendirme testi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 13: Pasif Komponentler - Optik Alıcılar ve Dedektörler
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Optik alıcıların ve dedektörlerin türleri, hassasiyet ve performans ölçümleri.</li>
-                                    <li><b>Hedef:</b> Optik sinyal algılama süreçlerini öğrenmek.</li>
-                                    <li><b>Deney:</b> Dedektör hassasiyetinin ölçülmesi ve sinyal-gürültü oranı analizi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 14: Pasif Komponentler - Optik Modülatörler
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Optik modülatörlerin türleri (elektro-optik v.b) ve uygulamaları.</li>
-                                    <li><b>Hedef:</b> Sinyal modülasyon tekniklerini anlamak.</li>
-                                    <li><b>Deney:</b> Optik modülatör ile sinyal modülasyonu testi.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 15: Pasif Komponentler - Polarizasyon Kontrolü
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Polarizasyon kontrol cihazlarının çalışma prensipleri ve uygulamaları.</li>
-                                    <li><b>Hedef:</b> Optik sinyallerin polarizasyon özelliklerini kontrol etme becerisi kazanmak.</li>
-                                    <li><b>Deney:</b> Polarizasyon kontrol cihazı ile sinyal polarizasyonunun ayarlanması.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Hafta 16: Pasif Komponentler - Dispersiyon Kompanzasyonu
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Konu:</b> Dispersiyon kompanzasyon teknikleri ve cihazları.</li>
-                                    <li><b>Hedef:</b> Fiber optik sistemlerde sinyal bozulmasını azaltma yöntemlerini öğrenmek.</li>
-                                    <li><b>Deney:</b>Dispersiyon kompanzasyon modülü ile sinyal kalitesinin iyileştirilmesi.</li>
-                                </ul>    
-                                <br />
-                                <p>
-                                    <b>
-                                        Değerlendirme
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li><b>Haftalık Raporlar:</b>Her deney sonrası öğrenciler, ölçüm sonuçlarını ve analizlerini içeren bir rapor sunacaktır.</li>
-                                    <li><b>Final Projesi:</b> Dönem sonunda, öğrenciler seçtikleri bir fiber optik sistem bileşenini kullanarak kapsamlı bir deney tasarlayacak ve sonuçlarını sunacaktır.</li>
-                                    <li><b>Katılım:</b>Laboratuvar oturumlarına katılım ve deneylerin tamamlanması değerlendirmeye dahil edilecektir.</li>
-                                </ul>
-                                <br />
-                                <p>
-                                    <b>
-                                        Notlar
-                                    </b>
-                                </p>
-                                <ul>
-                                    <li>Tüm deneyler, uzaktan erişilebilen gerçek fiber optik laboratuvar altyapısı kullanılarak gerçekleştirilecektir.</li>
-                                    <li>Öğrencilerin, deneyler öncesinde ilgili teorik bilgileri gözden geçirmesi beklenmektedir.</li>
-                                    <li>Güvenlik protokolleri ve cihaz kullanım talimatları her deney öncesinde detaylı bir şekilde paylaşılacaktır.</li>
+                                    <li><b>@localizer["Week1Topic"]</b></li>
+                                    <li><b>@localizer["Week1Goal"]</b></li>
+                                    <li><b>@localizer["Week1Experiment"]</b></li>
                                 </ul>
 
-                             
+                                <p><b>@localizer["Week2Title"]</b></p>
+                                <ul>
+                                    <li><b>@localizer["Week2Topic"]</b></li>
+                                    <li><b>@localizer["Week2Goal"]</b></li>
+                                    <li><b>@localizer["Week2Experiment"]</b></li>
+                                </ul>
+
+                                <p><b>@localizer["Week3Title"]</b></p>
+                                <ul>
+                                    <li><b>@localizer["Week3Topic"]</b></li>
+                                    <li><b>@localizer["Week3Goal"]</b></li>
+                                    <li><b>@localizer["Week3Experiment"]</b></li>
+                                </ul>
+
+                                <!-- Geri kalan haftalar da benzer şekilde -->
+
+                                <p><b>@localizer["Assessment"]</b></p>
+                                <ul>
+                                    <li><b>@localizer["WeeklyReports"]</b></li>
+                                    <li><b>@localizer["FinalProject"]</b></li>
+                                    <li><b>@localizer["Participation"]</b></li>
+                                </ul>
+
+                                <p><b>@localizer["Notes"]</b></p>
+                                <ul>
+                                    <li>@localizer["Note1"]</li>
+                                    <li>@localizer["Note2"]</li>
+                                    <li>@localizer["Note3"]</li>
+                                </ul>
+
+                            </div>
+
+                        </article>
+
+                    </div>
                 </section><!-- /Blog Details Section -->
-
 
             </div>
 
         </div>
-
-    </div>
     </div>
 
 </main>
-

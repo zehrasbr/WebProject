@@ -1,10 +1,13 @@
-﻿    <!-- Services Section -->
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
+<!-- Services Section -->
 <section id="services" class="services section light-background">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Hİzmetler</h2>
-        <p>Fiber optik teknolojileri alanında sunduğumuz eğitim ve laboratuvar hizmetlerimizi keşfedin.</p>
+        <h2>@localizer["ServicesTitle"]</h2>
+        <p>@localizer["ServicesSubtitle"]</p>
     </div><!-- End Section Title -->
 
     <div class="container">
@@ -13,37 +16,40 @@
             <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-item position-relative text-center">
                     <div class="icon"><i class="bi bi-activity icon"></i></div>
-                    <h4><a href="/Services/GetMore/" class="stretched-link">Temel Fiber Optik Eğitimi</a></h4>
-                    <p>Fiber optik altyapıya giriş yaparak temel bilgi ve becerilerin kazanılması amaçlanır.</p>
+                    <h4><a href="/Services/GetMore/" class="stretched-link">@localizer["Service1Title"]</a></h4>
+                    <p>@localizer["Service1Desc"]</p>
                     <br />
-                    <a href="/Services/GetMore/" class="readmore stretched-link"><span>Daha Fazlası</span><i class="bi bi-arrow-right"></i></a>
+                    <a href="/Services/GetMore/" class="readmore stretched-link">
+                        <span>@localizer["ReadMore"]</span><i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div><!-- End Service Item -->
 
             <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-item position-relative text-center">
                     <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
-                    <h4><a href="/Services/GetMore2/" class="stretched-link">Okullar İçin Dönemlik Fiber Optik Laboratuvar Deneyleri</a></h4>
-                    <p>Eğitim programlarına entegre edilebilecek, dönemlik fiber optik deney modülleri.</p>
+                    <h4><a href="/Services/GetMore2/" class="stretched-link">@localizer["Service2Title"]</a></h4>
+                    <p>@localizer["Service2Desc"]</p>
                     <br />
-                    <a href="/Services/GetMore2/" class="readmore stretched-link"><span>Daha Fazlası</span><i class="bi bi-arrow-right"></i></a>
+                    <a href="/Services/GetMore2/" class="readmore stretched-link">
+                        <span>@localizer["ReadMore"]</span><i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div><!-- End Service Item -->
 
             <div class="col-xl-3 col-md-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-item position-relative text-center">
                     <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
-                    <h4><a href="/Services/GetMore3/" class="stretched-link">Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</a></h4>
-                    <p>Gelişmiş fiber optik sistemler üzerine deneysel çalışmalar için özel tasarlanmıştır.</p>
+                    <h4><a href="/Services/GetMore3/" class="stretched-link">@localizer["Service3Title"]</a></h4>
+                    <p>@localizer["Service3Desc"]</p>
                     <br />
-                    <a href="/Services/GetMore3/" class="readmore stretched-link"><span>Daha Fazlası</span><i class="bi bi-arrow-right"></i></a>
+                    <a href="/Services/GetMore3/" class="readmore stretched-link">
+                        <span>@localizer["ReadMore"]</span><i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div><!-- End Service Item -->
 
         </div>
-    </div>
-
-
     </div>
 
 </section><!-- /Services Section -->

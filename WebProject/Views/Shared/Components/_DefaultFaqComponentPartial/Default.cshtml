@@ -1,10 +1,13 @@
-﻿<!-- Faq 2 Section -->
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
+<!-- Faq 2 Section -->
 <section id="faq-2" class="faq-2 section light-background">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Sıkça Sorulan Sorular</h2>
-        <p>Ürün ve hizmet süreçlerimizi daha iyi anlamanız için hazırladığımız sıkça sorulan sorular bölümü ile size yardımcı olmaktan memnuniyet duyarız.</p>
+        <h2>@localizer["FaqTitle"]</h2>
+        <p>@localizer["FaqDescription"]</p>
     </div><!-- End Section Title -->
 
     <div class="container">
@@ -17,69 +20,72 @@
 
                     <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3>Gerçek bir fiber optik deney ortamına gerçekten uzaktan erişebilir miyim?</h3>
+                        <h3>@localizer["FaqQ1"]</h3>
                         <div class="faq-content">
-                            <p>Evet. RealFOLab sayesinde dünyanın herhangi bir yerinden gerçek bir fiber optik laboratuvarına uzaktan erişim sağlayabilirsiniz. Randevu sistemimizle deney zamanınızı ayarlayarak, dilediğiniz zaman bağlanabilirsiniz.</p>
+                            <p>@localizer["FaqA1"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
 
                     <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3> Simülasyon yaptım ama gerçek deney ortamında çalışır mı?</h3>
+                        <h3>@localizer["FaqQ2"]</h3>
                         <div class="faq-content">
-                            <p>Simülasyonlar fikir verir, ancak gerçek fiber optik sistemlerde çalışmanın sonuçları her zaman daha doğrudur. RealFOLab, simülasyondan öteye geçmenizi ve teorik modellerinizi sahada test etmenizi sağlar.</p>
+                            <p>@localizer["FaqA2"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
 
                     <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3>Bu laboratuvar ortamını kullanmak için kabul almam gerekiyor mu?</h3>
+                        <h3>@localizer["FaqQ3"]</h3>
                         <div class="faq-content">
-                            <p>Hayır. Burs kazanmanıza ya da bir kuruluştan resmi kabul almanıza gerek yok. Öğrenci, akademisyen ya da bağımsız araştırmacı olun; platformumuz size açıktır.</p>
+                            <p>@localizer["FaqA3"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
 
                     <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3>Deney sırasında hangi cihazlara erişimim olacak?</h3>
+                        <h3>@localizer["FaqQ4"]</h3>
                         <div class="faq-content">
-                            <p>Gelişmiş optik kaynaklar, güç ölçerler, OTDR, TLS, OSA, ASE kaynakları, butterfly lazerler, pasif komponentler (kuplör, zayıflatıcı, filtre, vb.) gibi birçok cihaz aktif kullanımınıza sunulmaktadır. Tüm kontroller kullanıcıda olacak şekilde tasarlanmıştır.</p>
+                            <p>@localizer["FaqA4"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
 
                     <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3>Deneylerde güvenlik nasıl sağlanıyor?</h3>
+                        <h3>@localizer["FaqQ5"]</h3>
                         <div class="faq-content">
-                            <p>Tüm kullanıcılar deney öncesi sistem üzerinde eğitimden geçirilir. Ayrıca, sistem otomatik güvenlik protokolleriyle desteklenir. Fiziksel müdahale gerektirmeden uzaktan güvenli kullanım mümkündür.</p>
+                            <p>@localizer["FaqA5"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
-                    <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3>Deney sonuçlarını kaydedebilir miyim?</h3>
+                        <h3>@localizer["FaqQ6"]</h3>
                         <div class="faq-content">
-                            <p>Evet. Tüm veriler sistem tarafından otomatik olarak kaydedilir. İstediğiniz zaman deney verilerine erişebilir, indirebilir ve analiz edebilirsiniz.</p>
+                            <p>@localizer["FaqA6"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
-                    <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="800">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3>Eğitim içerikleri ne tür bilgiler içeriyor?</h3>
+                        <h3>@localizer["FaqQ7"]</h3>
                         <div class="faq-content">
-                            <p>Temel fiber optik eğitimi; fiber tipleri, ışık iletimi, kablo kurulumu, ölçüm yöntemleri ve güvenlik gibi konuları kapsar. Ayrıca uygulamalı içerikler sayesinde pratik deneyim de kazanırsınız.</p>
+                            <p>@localizer["FaqA7"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
-                    <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="900">
                         <i class="faq-icon bi bi-question-circle"></i>
-                        <h3>Aynı anda birden fazla kişiyle çalışabilir miyim?</h3>
+                        <h3>@localizer["FaqQ8"]</h3>
                         <div class="faq-content">
-                            <p>Evet. Platformumuz, birden fazla araştırmacının aynı deney ortamında ortak çalışmasına olanak sağlar. Bu, disiplinler arası çalışmalar ve uluslararası işbirlikleri için idealdir.</p>
+                            <p>@localizer["FaqA8"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->

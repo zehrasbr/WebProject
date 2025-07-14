@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>With our advanced technological infrastructure, our modern laboratory enables real-time experiments in the field of basic fiber optic communications and applications. In this lab, we offer hands-on and up-to-date knowledge by allowing students, researchers, and industry professionals to conduct various experiments such as the design, testing, and analysis of fiber optic communication systems.</value>
+  </data>
+  <data name="AboutFeature1" xml:space="preserve">
+    <value>We offer a real experimental experience.</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AddressTitle" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>All Rights Reserved</value>
+  </data>
+  <data name="AppointmentCreated" xml:space="preserve">
+    <value>Appointment Created</value>
+  </data>
+  <data name="AppointmentSubtitle" xml:space="preserve">
+    <value>You can fill out our appointment form for your questions, requests, or topics you want to discuss.</value>
+  </data>
+  <data name="Assessment" xml:space="preserve">
+    <value>Assessment</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="BreadcrumbDetails" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="BreadcrumbServices" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactButton" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContactSubtitle" xml:space="preserve">
+    <value>To help you in the best way possible, please use the contact form below to send us your questions, suggestions, or requests.</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="ContentTitle" xml:space="preserve">
+    <value>Advanced Fiber Optic Experiments for Graduate Researchers</value>
+  </data>
+  <data name="CreateAppointment" xml:space="preserve">
+    <value>Create Appointment</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created by</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>Date and Time</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Details1" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Details2" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="EmailTitle" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="FaqA1" xml:space="preserve">
+    <value>Yes. With RealFOLab, you can remotely access a real fiber optic laboratory from anywhere in the world. Schedule your experiment via our appointment system and connect whenever you want.</value>
+  </data>
+  <data name="FaqA2" xml:space="preserve">
+    <value>Simulations give you an idea, but working on real fiber optic systems always yields more accurate results. RealFOLab lets you go beyond simulations and test your theoretical models in the field.</value>
+  </data>
+  <data name="FaqA3" xml:space="preserve">
+    <value>No. You don't need a scholarship or official approval from an institution. Whether you're a student, academic, or independent researcher, the platform is open to you.</value>
+  </data>
+  <data name="FaqA4" xml:space="preserve">
+    <value>You will have access to advanced optical sources, power meters, OTDR, TLS, OSA, ASE sources, butterfly lasers, and passive components (couplers, attenuators, filters, etc.). All controls are designed for user operation.</value>
+  </data>
+  <data name="FaqA5" xml:space="preserve">
+    <value>All users are trained on the system before the experiment. The system is also supported by automatic safety protocols. Safe remote use without physical intervention is possible.</value>
+  </data>
+  <data name="FaqA6" xml:space="preserve">
+    <value>Yes. All data is automatically recorded by the system. You can access, download, and analyze the experiment data anytime.</value>
+  </data>
+  <data name="FaqA7" xml:space="preserve">
+    <value>Basic fiber optic training covers fiber types, light transmission, cable installation, measurement methods, and safety. Practical experience is also gained through applied content.</value>
+  </data>
+  <data name="FaqA8" xml:space="preserve">
+    <value>Yes. Our platform allows multiple researchers to collaborate in the same experiment environment, ideal for interdisciplinary studies and international collaborations.</value>
+  </data>
+  <data name="FaqDescription" xml:space="preserve">
+    <value>We are happy to assist you with our FAQ section prepared to help you better understand our product and service processes.</value>
+  </data>
+  <data name="FaqQ1" xml:space="preserve">
+    <value>Can I really access a real fiber optic experiment environment remotely?</value>
+  </data>
+  <data name="FaqQ2" xml:space="preserve">
+    <value>I made a simulation. Will it work in the real experiment environment?</value>
+  </data>
+  <data name="FaqQ3" xml:space="preserve">
+    <value>Do I need approval to use this laboratory environment?</value>
+  </data>
+  <data name="FaqQ4" xml:space="preserve">
+    <value>Which devices will I have access to during the experiment?</value>
+  </data>
+  <data name="FaqQ5" xml:space="preserve">
+    <value>How is safety ensured during experiments?</value>
+  </data>
+  <data name="FaqQ6" xml:space="preserve">
+    <value>Can I record the experiment results?</value>
+  </data>
+  <data name="FaqQ7" xml:space="preserve">
+    <value>What kind of information does the training content include?</value>
+  </data>
+  <data name="FaqQ8" xml:space="preserve">
+    <value>Can I work with multiple people at the same time?</value>
+  </data>
+  <data name="FaqTitle" xml:space="preserve">
+    <value>Frequently Asked Questions</value>
+  </data>
+  <data name="FiberOpticLabCoursePlan" xml:space="preserve">
+    <value>Fiber Optic Systems and Applications Laboratory Course Plan</value>
+  </data>
+  <data name="FiberOpticLabDescription" xml:space="preserve">
+    <value>This course plan is designed to provide hands-on education on fiber optic systems and components at the graduate level. ... (you can shorten as needed)</value>
+  </data>
+  <data name="FinalProject" xml:space="preserve">
+    <value>Final Project: At the end of the term, students will design a comprehensive experiment using a chosen fiber optic system component and present the results.</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Follow Us</value>
+  </data>
+  <data name="FollowUsDescription" xml:space="preserve">
+    <value>You can reach our social media accounts from the links below.</value>
+  </data>
+  <data name="FullNameLabel" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="GetAppointment" xml:space="preserve">
+    <value>Get Appointment</value>
+  </data>
+  <data name="GetMore" xml:space="preserve">
+    <value>Basic Fiber Optic Training</value>
+  </data>
+  <data name="GetMore2" xml:space="preserve">
+    <value>Quarterly Fiber Optic Laboratory Experiments for Schools</value>
+  </data>
+  <data name="GetMore2HeroImageAlt" xml:space="preserve">
+    <value>Quarterly fiber optic laboratory experiments image</value>
+  </data>
+  <data name="GetMore2Lead1" xml:space="preserve">
+    <value>Not sure which experiments to conduct? Our expert team is ready to assist you…</value>
+  </data>
+  <data name="GetMore2Lead2" xml:space="preserve">
+    <value>Want to create your own experiment list? Contact us for your requests, we are here to help.</value>
+  </data>
+  <data name="GetMore2Lead3" xml:space="preserve">
+    <value>Our fiber optic training program is designed for school level to introduce future technologies and provide students with fundamental communication infrastructure knowledge.</value>
+  </data>
+  <data name="GetMore2PageHeader" xml:space="preserve">
+    <value>Details of Quarterly Fiber Optic Laboratory Experiments for Schools</value>
+  </data>
+  <data name="GetMoreHeroImageAlt" xml:space="preserve">
+    <value>Basic Fiber Optic Training image</value>
+  </data>
+  <data name="GetMoreLead" xml:space="preserve">
+    <value>Fiber optic technology is one of the fundamental pillars of modern communication infrastructure and provides fast, reliable data transmission. In this training program, you can learn the basic principles and applications of fiber optic communication.</value>
+  </data>
+  <data name="GetMorePageHeader" xml:space="preserve">
+    <value>Basic Fiber Optic Training Details</value>
+  </data>
+  <data name="GetMoreSection1Item1" xml:space="preserve">
+    <value>What is fiber optic and how does it work?</value>
+  </data>
+  <data name="GetMoreSection1Item2" xml:space="preserve">
+    <value>Types of fibers and their structural properties</value>
+  </data>
+  <data name="GetMoreSection1Item3" xml:space="preserve">
+    <value>Light transmission and losses</value>
+  </data>
+  <data name="GetMoreSection1Item4" xml:space="preserve">
+    <value>Installation and maintenance of fiber optic cables</value>
+  </data>
+  <data name="GetMoreSection1Item5" xml:space="preserve">
+    <value>Basic measurement and testing methods</value>
+  </data>
+  <data name="GetMoreSection1Item6" xml:space="preserve">
+    <value>Safety and proper usage practices</value>
+  </data>
+  <data name="GetMoreSection1Title" xml:space="preserve">
+    <value>Training Content:</value>
+  </data>
+  <data name="GetMoreSection2Item1" xml:space="preserve">
+    <value>Students and researchers</value>
+  </data>
+  <data name="GetMoreSection2Item2" xml:space="preserve">
+    <value>Professionals working in the telecommunications and IT sectors</value>
+  </data>
+  <data name="GetMoreSection2Item3" xml:space="preserve">
+    <value>Technology enthusiasts and beginner-level participants</value>
+  </data>
+  <data name="GetMoreSection2Title" xml:space="preserve">
+    <value>Who Can Attend?</value>
+  </data>
+  <data name="GetMoreSection3Item1" xml:space="preserve">
+    <value>Prepare for the future of the industry by learning the basic concepts of fiber optic technology</value>
+  </data>
+  <data name="GetMoreSection3Item2" xml:space="preserve">
+    <value>Opportunity to gain experience with practical applications and real examples</value>
+  </data>
+  <data name="GetMoreSection3Item3" xml:space="preserve">
+    <value>Certify your knowledge and skills with a certificate Whether to advance your career or contribute to your personal development, open the doors of technology with basic fiber optic training. Contact us for detailed information and registration.</value>
+  </data>
+  <data name="GetMoreSection3Title" xml:space="preserve">
+    <value>Why Should You Attend?</value>
+  </data>
+  <data name="HeroQuestions" xml:space="preserve">
+    <value>Does the design in my mind work in practice? I created a simulation, but are the results consistent in real life? Is building a physical lab too costly?</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Performing experiments in a real fiber optic lab is now easier than ever</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>With RealFOLab,</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Infrastructure" xml:space="preserve">
+    <value>Infrastructure</value>
+  </data>
+  <data name="InfrastructureDescription" xml:space="preserve">
+    <value>Our laboratory infrastructure is equipped with state-of-the-art devices that enable advanced fiber optic experiments. With advanced measurement systems, remote access support, and automatic data collection modules, we provide our users with a safe, fast, and efficient experimental environment.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="Loading1" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Your message has been sent</value>
+  </data>
+  <data name="Note1" xml:space="preserve">
+    <value>All experiments will be conducted using a real fiber optic laboratory infrastructure accessible remotely.</value>
+  </data>
+  <data name="Note2" xml:space="preserve">
+    <value>Students are expected to review relevant theoretical knowledge before experiments.</value>
+  </data>
+  <data name="Note3" xml:space="preserve">
+    <value>Safety protocols and device usage instructions will be shared in detail before each experiment.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Objective" xml:space="preserve">
+    <value>Objective</value>
+  </data>
+  <data name="ObjectiveDescription" xml:space="preserve">
+    <value>This laboratory course aims to enable students to learn the fundamental principles, components, and measurement techniques of fiber optic communication systems practically.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OkButton" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="P1" xml:space="preserve">
+    <value>You can access the laboratory from anywhere in the world.</value>
+  </data>
+  <data name="P2" xml:space="preserve">
+    <value>No need for a scholarship or formal research acceptance.</value>
+  </data>
+  <data name="P3" xml:space="preserve">
+    <value>Your university or center not having expensive infrastructure is no longer a barrier to working in fiber optics.</value>
+  </data>
+  <data name="P4" xml:space="preserve">
+    <value>You can plan your lab access based on your schedule with our appointment system. Access is available 24/7.</value>
+  </data>
+  <data name="P5" xml:space="preserve">
+    <value>Instead of simulations, work with real fiber optic systems and validate your results.</value>
+  </data>
+  <data name="P6" xml:space="preserve">
+    <value>With automated data collection and analysis tools, access and analyze results quickly — all outcomes are recorded.</value>
+  </data>
+  <data name="P7" xml:space="preserve">
+    <value>Multiple researchers or teams can collaborate on the same platform. Interdisciplinary studies and international collaborations are now easier.</value>
+  </data>
+  <data name="P8" xml:space="preserve">
+    <value>We handle the lab, you focus on your experiments.</value>
+  </data>
+  <data name="P9" xml:space="preserve">
+    <value>Our real fiber optic labs provide graduate researchers with significant advantages in cost, access, flexibility, and collaboration — helping them develop both academic and practical skills.</value>
+  </data>
+  <data name="PageHeader" xml:space="preserve">
+    <value>Advanced Fiber Optic Experiments for Graduate Researchers</value>
+  </data>
+  <data name="Participation" xml:space="preserve">
+    <value>Participation: Attendance and completion of laboratory sessions and experiments will be evaluated.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="PhoneTitle" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="PricingSubtitle" xml:space="preserve">
+    <value>We are ready to simplify your processes with our product range optimized for industry needs.</value>
+  </data>
+  <data name="PricingTitle" xml:space="preserve">
+    <value>Our Products</value>
+  </data>
+  <data name="Product1Title" xml:space="preserve">
+    <value>Basic Fiber Optics Training</value>
+  </data>
+  <data name="Product1_Feature1" xml:space="preserve">
+    <value>What is fiber optics and how does it work?</value>
+  </data>
+  <data name="Product1_Feature2" xml:space="preserve">
+    <value>Fiber types and structural properties</value>
+  </data>
+  <data name="Product1_Feature3" xml:space="preserve">
+    <value>Light transmission and losses</value>
+  </data>
+  <data name="Product1_Feature4" xml:space="preserve">
+    <value>Installation and maintenance of fiber optic cables</value>
+  </data>
+  <data name="Product1_Feature5" xml:space="preserve">
+    <value>Basic measurement and testing methods</value>
+  </data>
+  <data name="Product1_Feature6" xml:space="preserve">
+    <value>Safety and best usage practices</value>
+  </data>
+  <data name="Product2Title" xml:space="preserve">
+    <value>Semester-Based Fiber Optic Lab Experiments for Schools</value>
+  </data>
+  <data name="Product2_Feature1" xml:space="preserve">
+    <value>Our fiber optic training program is designed for school-level learners to understand future technologies and communication infrastructure.</value>
+  </data>
+  <data name="Product2_Feature2" xml:space="preserve">
+    <value>Students will learn core fiber optic concepts while gaining hands-on experience.</value>
+  </data>
+  <data name="Product2_Feature3" xml:space="preserve">
+    <value>This lab course aims to teach the fundamentals, components, and measurement techniques of fiber optic communication systems through practice.</value>
+  </data>
+  <data name="Product3Title" xml:space="preserve">
+    <value>Advanced Fiber Optic Experiments for Graduate Researchers</value>
+  </data>
+  <data name="Product3_Feature1" xml:space="preserve">
+    <value>Access the lab from anywhere in the world.</value>
+  </data>
+  <data name="Product3_Feature2" xml:space="preserve">
+    <value>No need for scholarships or official admission to participate.</value>
+  </data>
+  <data name="Product3_Feature3" xml:space="preserve">
+    <value>Work with real fiber optic systems instead of simulations and validate your results.</value>
+  </data>
+  <data name="Product3_Feature4" xml:space="preserve">
+    <value>Quickly access and analyze data with automated tools. All results are securely stored.</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="QuickLinks" xml:space="preserve">
+    <value>Quick Links</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="ReadMore1" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
+  <data name="RemoveTimeConfirm" xml:space="preserve">
+    <value>Are you sure you want to remove the selected time</value>
+  </data>
+  <data name="Role_Atakan" xml:space="preserve">
+    <value>Software Team Lead - Technical Support</value>
+  </data>
+  <data name="Role_Bengisu" xml:space="preserve">
+    <value>Technical Support</value>
+  </data>
+  <data name="Role_Cemal" xml:space="preserve">
+    <value>RealRemoteLab Manager</value>
+  </data>
+  <data name="Role_Murat" xml:space="preserve">
+    <value>RealRemoteLab Manager</value>
+  </data>
+  <data name="Role_Ozcan" xml:space="preserve">
+    <value>Hardware Team Lead - Technical Support</value>
+  </data>
+  <data name="Role_Zehra" xml:space="preserve">
+    <value>Full Stack Developer</value>
+  </data>
+  <data name="SampleCourseContent" xml:space="preserve">
+    <value>Sample Course Content</value>
+  </data>
+  <data name="SelectDateTime" xml:space="preserve">
+    <value>Select date and time</value>
+  </data>
+  <data name="SelectOption" xml:space="preserve">
+    <value>Please Select</value>
+  </data>
+  <data name="SendMessageButton" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="Service1Desc" xml:space="preserve">
+    <value>Aims to provide fundamental knowledge and skills by introducing fiber optic infrastructure.</value>
+  </data>
+  <data name="Service1Title" xml:space="preserve">
+    <value>Basic Fiber Optics Training</value>
+  </data>
+  <data name="Service2Desc" xml:space="preserve">
+    <value>Semester-based fiber optic experiment modules that can be integrated into educational programs.</value>
+  </data>
+  <data name="Service2Title" xml:space="preserve">
+    <value>Semester-Based Fiber Optic Lab Experiments for Schools</value>
+  </data>
+  <data name="Service3Desc" xml:space="preserve">
+    <value>Specially designed for experimental studies on advanced fiber optic systems.</value>
+  </data>
+  <data name="Service3Title" xml:space="preserve">
+    <value>Advanced Fiber Optic Experiments for Graduate Researchers</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Services1" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Services2" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="ServicesSubtitle" xml:space="preserve">
+    <value>Discover our training and laboratory services in the field of fiber optic technologies.</value>
+  </data>
+  <data name="ServicesTitle" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="Step1Desc" xml:space="preserve">
+    <value>Get ready to work in a real fiber optic lab.</value>
+  </data>
+  <data name="Step1Feat1" xml:space="preserve">
+    <value>Fiber connection and loss measurement</value>
+  </data>
+  <data name="Step1Feat2" xml:space="preserve">
+    <value>EDFA gain analysis</value>
+  </data>
+  <data name="Step1Feat3" xml:space="preserve">
+    <value>WDM channel characterization</value>
+  </data>
+  <data name="Step1Feat4" xml:space="preserve">
+    <value>Optical spectrum measurements</value>
+  </data>
+  <data name="Step1Title" xml:space="preserve">
+    <value>Select the Experiment</value>
+  </data>
+  <data name="Step2Feat1" xml:space="preserve">
+    <value>Choose a time slot suitable for your schedule.</value>
+  </data>
+  <data name="Step2Feat2" xml:space="preserve">
+    <value>A dedicated time is allocated for each user.</value>
+  </data>
+  <data name="Step2Feat3" xml:space="preserve">
+    <value>Access is provided for both course-based and individual use.</value>
+  </data>
+  <data name="Step2Title" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Step3Desc" xml:space="preserve">
+    <value>Connect to the lab through your browser:</value>
+  </data>
+  <data name="Step3Feat1" xml:space="preserve">
+    <value>Watch the lab with live camera feed</value>
+  </data>
+  <data name="Step3Feat2" xml:space="preserve">
+    <value>Control lasers and measuring devices</value>
+  </data>
+  <data name="Step3Feat3" xml:space="preserve">
+    <value>Follow live data with graphs</value>
+  </data>
+  <data name="Step3Title" xml:space="preserve">
+    <value>Perform the Experiment Remotely</value>
+  </data>
+  <data name="Step4Desc" xml:space="preserve">
+    <value>All measurements are automatically recorded during the experiment.</value>
+  </data>
+  <data name="Step4Feat1" xml:space="preserve">
+    <value>Generate PDF reports</value>
+  </data>
+  <data name="Step4Feat2" xml:space="preserve">
+    <value>Download CSV / Excel data outputs</value>
+  </data>
+  <data name="Step4Feat3" xml:space="preserve">
+    <value>Access raw data for advanced analysis</value>
+  </data>
+  <data name="Step4Title" xml:space="preserve">
+    <value>Obtain Measurement Data</value>
+  </data>
+  <data name="Step5Desc" xml:space="preserve">
+    <value>For experiments conducted during the course:</value>
+  </data>
+  <data name="Step5Feat1" xml:space="preserve">
+    <value>Instructors can view experiment results</value>
+  </data>
+  <data name="Step5Feat2" xml:space="preserve">
+    <value>Feedback and grading based on performance</value>
+  </data>
+  <data name="Step5Feat3" xml:space="preserve">
+    <value>Group experiments and comparative analysis possible</value>
+  </data>
+  <data name="Step5Title" xml:space="preserve">
+    <value>Instructor Feedback (Optional)</value>
+  </data>
+  <data name="Step6Feat1" xml:space="preserve">
+    <value>University students (Electrical-Electronics, Physics, Telecom)</value>
+  </data>
+  <data name="Step6Feat2" xml:space="preserve">
+    <value>Graduate / doctoral researchers</value>
+  </data>
+  <data name="Step6Feat3" xml:space="preserve">
+    <value>Educational institutions and instructors</value>
+  </data>
+  <data name="Step6Feat4" xml:space="preserve">
+    <value>R&amp;D personnel</value>
+  </data>
+  <data name="Step6Title" xml:space="preserve">
+    <value>Who is it for?</value>
+  </data>
+  <data name="SubjectLabel" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SubjectOption_Collaboration" xml:space="preserve">
+    <value>Collaboration</value>
+  </data>
+  <data name="SubjectOption_Complaint" xml:space="preserve">
+    <value>Complaint</value>
+  </data>
+  <data name="SubjectOption_InfoRequest" xml:space="preserve">
+    <value>Information Request</value>
+  </data>
+  <data name="SubjectOption_Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="SubjectOption_Request" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="SubjectOption_Suggestion" xml:space="preserve">
+    <value>Suggestion</value>
+  </data>
+  <data name="SubjectOption_TechSupport" xml:space="preserve">
+    <value>Technical Support</value>
+  </data>
+  <data name="SubjectTypeLabel" xml:space="preserve">
+    <value>Subject Type</value>
+  </data>
+  <data name="SubscribeSubtitle" xml:space="preserve">
+    <value>For detailed information about our products, feel free to contact us.</value>
+  </data>
+  <data name="SubscribeTitle" xml:space="preserve">
+    <value>Detailed Information</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="SuccessMessage" xml:space="preserve">
+    <value>Your message has been sent!</value>
+  </data>
+  <data name="SuccessTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="TeamMembers" xml:space="preserve">
+    <value>Team Members</value>
+  </data>
+  <data name="TeamSubtitle" xml:space="preserve">
+    <value>Our stream consists of experienced professionals in engineering, design and project management. Our common goal Quality, trust and sustainability.</value>
+  </data>
+  <data name="TeamTitle" xml:space="preserve">
+    <value>Our Team</value>
+  </data>
+  <data name="Testimonial1Content" xml:space="preserve">
+    <value>I was interested in fiber optics but didn’t know where to start...</value>
+  </data>
+  <data name="Testimonial1Name" xml:space="preserve">
+    <value>Murat B.</value>
+  </data>
+  <data name="Testimonial1Title" xml:space="preserve">
+    <value>Electrical-Electronics Engineering Student</value>
+  </data>
+  <data name="Testimonial2Content" xml:space="preserve">
+    <value>I was looking for a tech-based experience for my students...</value>
+  </data>
+  <data name="Testimonial2Name" xml:space="preserve">
+    <value>Elif K.</value>
+  </data>
+  <data name="Testimonial2Title" xml:space="preserve">
+    <value>Physics Teacher</value>
+  </data>
+  <data name="Testimonial3Content" xml:space="preserve">
+    <value>As a field engineer, I’ve worked with many devices, but this platform allowed...</value>
+  </data>
+  <data name="Testimonial3Name" xml:space="preserve">
+    <value>Selin A.</value>
+  </data>
+  <data name="Testimonial3Title" xml:space="preserve">
+    <value>Telecommunications Professional</value>
+  </data>
+  <data name="Testimonial4Content" xml:space="preserve">
+    <value>In an interdisciplinary project, we needed optical analysis...</value>
+  </data>
+  <data name="Testimonial4Name" xml:space="preserve">
+    <value>Kenan T.</value>
+  </data>
+  <data name="Testimonial4Title" xml:space="preserve">
+    <value>Project Coordinator</value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>Testimonials</value>
+  </data>
+  <data name="TestimonialsSubtitle" xml:space="preserve">
+    <value>Our commitment to customer satisfaction grows stronger with your valuable feedback.</value>
+  </data>
+  <data name="TestimonialsTitle" xml:space="preserve">
+    <value>Testimonials</value>
+  </data>
+  <data name="WatchVideo" xml:space="preserve">
+    <value>Watch Video</value>
+  </data>
+  <data name="Week1Experiment" xml:space="preserve">
+    <value>Examine different connector types and apply connection techniques.</value>
+  </data>
+  <data name="Week1Goal" xml:space="preserve">
+    <value>Understand the structure, applications of fiber optic cables, and features of connector types.</value>
+  </data>
+  <data name="Week1Title" xml:space="preserve">
+    <value>Week 1: Introduction to Fiber Optic Cables and Components</value>
+  </data>
+  <data name="Week1Topic" xml:space="preserve">
+    <value>Types of fiber optic cables and basic components (patch cords, pigtail cables, connector types: SC, LC, FC, etc.).</value>
+  </data>
+  <data name="Week2Experiment" xml:space="preserve">
+    <value>Perform fiber optic cable connection using a fusion splicer device.</value>
+  </data>
+  <data name="Week2Goal" xml:space="preserve">
+    <value>Learn splicing processes and gain skills to create low-loss connections.</value>
+  </data>
+  <data name="Week2Title" xml:space="preserve">
+    <value>Week 2: Fiber Optic Splicing</value>
+  </data>
+  <data name="Week2Topic" xml:space="preserve">
+    <value>Splicing techniques in fiber optic cables (fusion splicing, mechanical splicing).</value>
+  </data>
+  <data name="Week3Experiment" xml:space="preserve">
+    <value>Measure signal power with optical power meter and analyze results.</value>
+  </data>
+  <data name="Week3Goal" xml:space="preserve">
+    <value>Develop skills to accurately measure and analyze optical signal power.</value>
+  </data>
+  <data name="Week3Title" xml:space="preserve">
+    <value>Week 3: Fiber Optic Devices - Optical Power Meter and Power Source</value>
+  </data>
+  <data name="Week3Topic" xml:space="preserve">
+    <value>Introduction to optical power meters and power sources, measurement principles.</value>
+  </data>
+  <data name="WeeklyCoursePlan" xml:space="preserve">
+    <value>Weekly Course Plan</value>
+  </data>
+  <data name="WeeklyReports" xml:space="preserve">
+    <value>Weekly Reports: After each experiment, students will submit a report including measurement results and analyses.</value>
+  </data>
+  <data name="WhyUs1Content" xml:space="preserve">
+    <value>In our lab, you can closely examine the performance and characteristics of fiber optic components with real-time data transmission and analysis capabilities. Additionally, you will have the opportunity to develop innovative projects while learning the fundamental principles of fiber optic technologies using advanced measuring devices.</value>
+  </data>
+  <data name="WhyUs1Title" xml:space="preserve">
+    <value>Full control over optical light sources and measuring devices</value>
+  </data>
+  <data name="WhyUs2Content" xml:space="preserve">
+    <value>Surprised? You now have control over passive components such as optical couplers, attenuators, and filters — making your experiments much easier.</value>
+  </data>
+  <data name="WhyUs2Title" xml:space="preserve">
+    <value>Ready for an experience like never before? You now have control over passive fiber optic components too</value>
+  </data>
+  <data name="WhyUs3Content" xml:space="preserve">
+    <value>Our goal is to support participants in specializing in fiber optic technologies by providing a hands-on training and research environment, while enabling them to closely follow innovations in the field. Contact us to experience a real laboratory session.</value>
+  </data>
+  <data name="WhyUs3Title" xml:space="preserve">
+    <value>Our Mission</value>
+  </data>
+  <data name="WorkProcess" xml:space="preserve">
+    <value>Work Process</value>
+  </data>
+  <data name="WorkProcessDescription" xml:space="preserve">
+    <value>Our step-by-step work process for project success is outlined below. Each stage is tailored to your needs.</value>
+  </data>
+</root>

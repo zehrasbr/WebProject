@@ -1,4 +1,7 @@
-﻿<!-- Subscribe Section -->
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
+<!-- Subscribe Section -->
 <style>
     .btn-get-started {
         display: inline-block;
@@ -24,16 +27,15 @@
         <div class="row gy-4 justify-content-between align-items-center">
             <div class="col-lg-6">
                 <div class="cta-content" data-aos="fade-up" data-aos-delay="200">
-                    <h2>Detaylı Bilgi</h2>
-                    <p>Ürünlerimiz hakkında detaylı bilgi için bizimle iletişime geçebilirsiniz.</p>
+                    <h2>@localizer["SubscribeTitle"]</h2>
+                    <p>@localizer["SubscribeSubtitle"]</p>
                     <form action="forms/newsletter.php" method="post" class="php-email-form cta-form" data-aos="fade-up" data-aos-delay="300">
                         <div class="input-group mb-3">
                             <div class="d-flex">
-                                <a href="/Contact/Index/" class="btn-get-started">İletişim</a>
+                                <a href="/Contact/Index/" class="btn-get-started">@localizer["ContactButton"]</a>
                             </div>
-                         
                         </div>
-                        <div class="loading">Yükleniyor</div>
+                        <div class="loading">@localizer["Loading"]</div>
                         <div class="error-message"></div>
                     </form>
                 </div>
@@ -45,4 +47,4 @@
             </div>
         </div>
     </div>
-</section><!-- /Subscribe Section -->
+</section>

@@ -1,13 +1,14 @@
-﻿<!-- Work Process Section -->
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
+<!-- Work Process Section -->
 <section id="work-process" class="work-process section">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>İş Sürecİ</h2>
-        <p>
-            Sunduğumuz projelerde başarıya ulaşmak için uyguladığımız adım adım iş sürecimiz aşağıdaki gibidir. Her aşama, ihtiyaçlarınıza özel çözüm sunmayı hedefler.
-        </p>
-    </div><!-- End Section Title -->
+        <h2>@localizer["WorkProcess"]</h2>
+        <p>@localizer["WorkProcessDescription"]</p>
+    </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5">
@@ -20,18 +21,19 @@
                     </div>
                     <div class="steps-content">
                         <div class="steps-number">01</div>
-                        <h3>Deneyi Seçin</h3>
-                        <p>Gerçek bir fiber optik laboratuvarında çalışmaya hazır olun.</p>
+                        <h3>@localizer["Step1Title"]</h3>
+                        <p>@localizer["Step1Desc"]</p>
                         <div class="steps-features">
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Fiber bağlantı ve kayıp ölçümü</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>EDFA kazanç analizi</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>WDM kanal karakterizasyonu</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Optik spektrum ölçümleri</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step1Feat1"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step1Feat2"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step1Feat3"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step1Feat4"]</span></div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Diğer adımlar aynı şekilde devam eder -->
             <!-- Step 2 -->
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="steps-item">
@@ -40,11 +42,11 @@
                     </div>
                     <div class="steps-content">
                         <div class="steps-number">02</div>
-                        <h3>Zamanlayın</h3>
+                        <h3>@localizer["Step2Title"]</h3>
                         <div class="steps-features">
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Kendi takviminize uygun bir saat seçin.</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Her kullanıcıya özel zaman aralığı ayrılır.</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Ders kapsamında veya bireysel çalışma için erişim imkanı sunulur.</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step2Feat1"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step2Feat2"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step2Feat3"]</span></div>
                         </div>
                     </div>
                 </div>
@@ -58,12 +60,12 @@
                     </div>
                     <div class="steps-content">
                         <div class="steps-number">03</div>
-                        <h3>Deneyi Uzaktan Gerçekleştirin</h3>
-                        <p>Tarayıcı üzerinden laboratuvara bağlanın:</p>
+                        <h3>@localizer["Step3Title"]</h3>
+                        <p>@localizer["Step3Desc"]</p>
                         <div class="steps-features">
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Canlı kamera görüntüsüyle laboratuvarı izleyin</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Lazerleri ve ölçüm cihazlarını kontrol edin</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Anlık verileri grafiklerle takip edin</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step3Feat1"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step3Feat2"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step3Feat3"]</span></div>
                         </div>
                     </div>
                 </div>
@@ -77,12 +79,12 @@
                     </div>
                     <div class="steps-content">
                         <div class="steps-number">04</div>
-                        <h3>Ölçüm Verilerini Alın</h3>
-                        <p>Deney süresince tüm ölçümler otomatik kaydedilir.</p>
+                        <h3>@localizer["Step4Title"]</h3>
+                        <p>@localizer["Step4Desc"]</p>
                         <div class="steps-features">
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>PDF rapor oluşturun</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>CSV / Excel veri çıktısı indirin</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>İleri düzey analiz için ham veriye erişin</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step4Feat1"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step4Feat2"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step4Feat3"]</span></div>
                         </div>
                     </div>
                 </div>
@@ -96,12 +98,12 @@
                     </div>
                     <div class="steps-content">
                         <div class="steps-number">05</div>
-                        <h3>Eğitmen Geri Bildirimi (Opsiyonel)</h3>
-                        <p>Ders kapsamında yapılan deneylerde:</p>
+                        <h3>@localizer["Step5Title"]</h3>
+                        <p>@localizer["Step5Desc"]</p>
                         <div class="steps-features">
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Eğitmenler deney sonuçlarını görebilir</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Performansa göre geribildirim ve notlandırma yapılabilir</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Grup deneyleri ve karşılaştırmalı analiz mümkün</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step5Feat1"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step5Feat2"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step5Feat3"]</span></div>
                         </div>
                     </div>
                 </div>
@@ -115,17 +117,18 @@
                     </div>
                     <div class="steps-content">
                         <div class="steps-number">?</div>
-                        <h3>Kimler İçin?</h3>
+                        <h3>@localizer["Step6Title"]</h3>
                         <div class="steps-features">
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Üniversite öğrencileri (Elektrik-Elektronik, Fizik, Telekom)</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Yüksek lisans / doktora araştırmacıları</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Eğitim kurumları ve eğitmenler</span></div>
-                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>Ar-Ge çalışanları</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step6Feat1"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step6Feat2"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step6Feat3"]</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle"></i><span>@localizer["Step6Feat4"]</span></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div><!-- End Row -->
-    </div><!-- End Container -->
-</section><!-- End Work Process Section -->
+
+        </div>
+    </div>
+</section>

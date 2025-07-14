@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutDescription" xml:space="preserve">
+    <value>Gelişmiş teknolojik altyapımızla, temel fiber optik iletişim ve uygulamaları alanında gerçek zamanlı deneyler yapabileceğiniz modern laboratuvarımız sizlere hizmet veriyor. Bu laboratuvarda, fiber optik iletişim sistemlerinin tasarımı, testi ve analizi gibi çeşitli deneyleri gerçekleştirerek, öğrencilere, araştırmacılara ve endüstri profesyonellerine pratik ve güncel bilgiler sunuyoruz.</value>
+  </data>
+  <data name="AboutFeature1" xml:space="preserve">
+    <value>Gerçek bir deneysel deneyim sunuyoruz.</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>Hakkımızda</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>Hakkımızda</value>
+  </data>
+  <data name="AddressTitle" xml:space="preserve">
+    <value>Adres</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Hepsi</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>Tüm Hakları Saklıdır</value>
+  </data>
+  <data name="AppointmentCreated" xml:space="preserve">
+    <value>Randevu Oluşturuldu</value>
+  </data>
+  <data name="AppointmentSubtitle" xml:space="preserve">
+    <value>Sorularınız, talepleriniz veya görüşmek istediğiniz konular için randevu formumuzu doldurabilirsiniz.</value>
+  </data>
+  <data name="Assessment" xml:space="preserve">
+    <value>Değerlendirme</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="BreadcrumbDetails" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="BreadcrumbServices" xml:space="preserve">
+    <value>Hizmetler</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Dili Değiştir</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="ContactButton" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="ContactSubtitle" xml:space="preserve">
+    <value>Size en iyi şekilde yardımcı olabilmemiz için tüm soru, öneri veya taleplerinizi aşağıdaki iletişim formunu kullanarak bize iletebilirsiniz.</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>İletişim</value>
+  </data>
+  <data name="ContentTitle" xml:space="preserve">
+    <value>Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</value>
+  </data>
+  <data name="CreateAppointment" xml:space="preserve">
+    <value>Randevu Oluştur</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Hazırlayan</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Kontrol Paneli</value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>Tarih ve Saat</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="DescriptionLabel" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="Details1" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="Details2" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>Mail Adresi</value>
+  </data>
+  <data name="EmailTitle" xml:space="preserve">
+    <value>Mail Adresi</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>Sıkça Sorulan Sorular</value>
+  </data>
+  <data name="FaqA1" xml:space="preserve">
+    <value>Evet. RealFOLab sayesinde dünyanın herhangi bir yerinden gerçek bir fiber optik laboratuvarına uzaktan erişim sağlayabilirsiniz. Randevu sistemimizle deney zamanınızı ayarlayarak, dilediğiniz zaman bağlanabilirsiniz.</value>
+  </data>
+  <data name="FaqA2" xml:space="preserve">
+    <value>Simülasyonlar fikir verir, ancak gerçek fiber optik sistemlerde çalışmanın sonuçları her zaman daha doğrudur. RealFOLab, simülasyondan öteye geçmenizi ve teorik modellerinizi sahada test etmenizi sağlar.</value>
+  </data>
+  <data name="FaqA3" xml:space="preserve">
+    <value>Hayır. Burs kazanmanıza ya da bir kuruluştan resmi kabul almanıza gerek yok. Öğrenci, akademisyen ya da bağımsız araştırmacı olun; platformumuz size açıktır.</value>
+  </data>
+  <data name="FaqA4" xml:space="preserve">
+    <value>Gelişmiş optik kaynaklar, güç ölçerler, OTDR, TLS, OSA, ASE kaynakları, butterfly lazerler, pasif komponentler (kuplör, zayıflatıcı, filtre, vb.) gibi birçok cihaz aktif kullanımınıza sunulmaktadır. Tüm kontroller kullanıcıda olacak şekilde tasarlanmıştır.</value>
+  </data>
+  <data name="FaqA5" xml:space="preserve">
+    <value>Tüm kullanıcılar deney öncesi sistem üzerinde eğitimden geçirilir. Ayrıca, sistem otomatik güvenlik protokolleriyle desteklenir. Fiziksel müdahale gerektirmeden uzaktan güvenli kullanım mümkündür.</value>
+  </data>
+  <data name="FaqA6" xml:space="preserve">
+    <value>Evet. Tüm veriler sistem tarafından otomatik olarak kaydedilir. İstediğiniz zaman deney verilerine erişebilir, indirebilir ve analiz edebilirsiniz.</value>
+  </data>
+  <data name="FaqA7" xml:space="preserve">
+    <value>Temel fiber optik eğitimi; fiber tipleri, ışık iletimi, kablo kurulumu, ölçüm yöntemleri ve güvenlik gibi konuları kapsar. Ayrıca uygulamalı içerikler sayesinde pratik deneyim de kazanırsınız.</value>
+  </data>
+  <data name="FaqA8" xml:space="preserve">
+    <value>Evet. Platformumuz, birden fazla araştırmacının aynı deney ortamında ortak çalışmasına olanak sağlar. Bu, disiplinler arası çalışmalar ve uluslararası işbirlikleri için idealdir.</value>
+  </data>
+  <data name="FaqDescription" xml:space="preserve">
+    <value>Ürün ve hizmet süreçlerimizi daha iyi anlamanız için hazırladığımız sıkça sorulan sorular bölümü ile size yardımcı olmaktan memnuniyet duyarız.</value>
+  </data>
+  <data name="FaqQ1" xml:space="preserve">
+    <value>Gerçek bir fiber optik deney ortamına gerçekten uzaktan erişebilir miyim?</value>
+  </data>
+  <data name="FaqQ2" xml:space="preserve">
+    <value>Simülasyon yaptım ama gerçek deney ortamında çalışır mı?</value>
+  </data>
+  <data name="FaqQ3" xml:space="preserve">
+    <value>Bu laboratuvar ortamını kullanmak için kabul almam gerekiyor mu?</value>
+  </data>
+  <data name="FaqQ4" xml:space="preserve">
+    <value>Deney sırasında hangi cihazlara erişimim olacak?</value>
+  </data>
+  <data name="FaqQ5" xml:space="preserve">
+    <value>Deneylerde güvenlik nasıl sağlanıyor?</value>
+  </data>
+  <data name="FaqQ6" xml:space="preserve">
+    <value>Deney sonuçlarını kaydedebilir miyim?</value>
+  </data>
+  <data name="FaqQ7" xml:space="preserve">
+    <value>Eğitim içerikleri ne tür bilgiler içeriyor?</value>
+  </data>
+  <data name="FaqQ8" xml:space="preserve">
+    <value>Aynı anda birden fazla kişiyle çalışabilir miyim?</value>
+  </data>
+  <data name="FaqTitle" xml:space="preserve">
+    <value>Sıkça Sorulan Sorular</value>
+  </data>
+  <data name="FiberOpticLabCoursePlan" xml:space="preserve">
+    <value>Fiber Optik Sistemler ve Uygulamaları Laboratuvar Ders Planı</value>
+  </data>
+  <data name="FiberOpticLabDescription" xml:space="preserve">
+    <value>Bu ders planı, lisansüstü düzeyde fiber optik sistemler ve bileşenleri üzerine uygulamalı bir eğitim sunmak amacıyla tasarlanmıştır. ... (kısaltabilirsin)</value>
+  </data>
+  <data name="FinalProject" xml:space="preserve">
+    <value>Final Projesi: Dönem sonunda, öğrenciler seçtikleri bir fiber optik sistem bileşenini kullanarak kapsamlı bir deney tasarlayacak ve sonuçlarını sunacaktır.</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Bizi Takip Edin</value>
+  </data>
+  <data name="FollowUsDescription" xml:space="preserve">
+    <value>Sosyal medya hesaplarımıza aşağıdaki linklerden ulaşabilirsiniz.</value>
+  </data>
+  <data name="FullNameLabel" xml:space="preserve">
+    <value>Ad Soyad</value>
+  </data>
+  <data name="GetAppointment" xml:space="preserve">
+    <value>Randevu Al</value>
+  </data>
+  <data name="GetMore" xml:space="preserve">
+    <value>Temel Fiber Optik Eğitimi</value>
+  </data>
+  <data name="GetMore2" xml:space="preserve">
+    <value>Okullar İçin Dönemlik Fiber Optik Laboratuvar Deneyleri</value>
+  </data>
+  <data name="GetMore2HeroImageAlt" xml:space="preserve">
+    <value>Dönemlik fiber optik laboratuvar deneyleri resmi</value>
+  </data>
+  <data name="GetMore2Lead1" xml:space="preserve">
+    <value>Hangi deneyleri yapacağınızı bilmiyor musunuz? Uzman kadromuz size yardıma hazır…</value>
+  </data>
+  <data name="GetMore2Lead2" xml:space="preserve">
+    <value>Deney listenizi siz mi oluşturmak istiyorsunuz? Talepleriniz için iletişime geçiniz…</value>
+  </data>
+  <data name="GetMore2Lead3" xml:space="preserve">
+    <value>Geleceğin teknolojilerini yakından tanımak ve öğrencilere temel iletişim altyapısı bilgileri kazandırmak amacıyla fiber optik eğitim programımız, okul seviyesine uygun olarak tasarlanmıştır.</value>
+  </data>
+  <data name="GetMore2PageHeader" xml:space="preserve">
+    <value>Okullar İçin Dönemlik Fiber Optik Laboratuvar Deneyleri Detaylar</value>
+  </data>
+  <data name="GetMoreHeroImageAlt" xml:space="preserve">
+    <value>Temel Fiber Optik Eğitimi görseli</value>
+  </data>
+  <data name="GetMoreLead" xml:space="preserve">
+    <value>Fiber optik teknolojisi, günümüz iletişim altyapısının temel taşlarından biridir ve hızlı, güvenilir veri iletimi sağlar. Bu eğitim programımızda, fiber optik iletişimin temel prensiplerini ve uygulamalarını öğrenebilirsiniz.</value>
+  </data>
+  <data name="GetMorePageHeader" xml:space="preserve">
+    <value>Temel Fiber Optik Eğitimi Detaylar</value>
+  </data>
+  <data name="GetMoreSection1Item1" xml:space="preserve">
+    <value>Fiber optik nedir ve nasıl çalışır?</value>
+  </data>
+  <data name="GetMoreSection1Item2" xml:space="preserve">
+    <value>Fiber tipleri ve yapısal özellikleri</value>
+  </data>
+  <data name="GetMoreSection1Item3" xml:space="preserve">
+    <value>Işık iletimi ve kayıplar</value>
+  </data>
+  <data name="GetMoreSection1Item4" xml:space="preserve">
+    <value>Fiber optik kabloların kurulumu ve bakımı</value>
+  </data>
+  <data name="GetMoreSection1Item5" xml:space="preserve">
+    <value>Temel ölçüm ve test yöntemleri</value>
+  </data>
+  <data name="GetMoreSection1Item6" xml:space="preserve">
+    <value>Güvenlik ve doğru kullanım pratikleri</value>
+  </data>
+  <data name="GetMoreSection1Title" xml:space="preserve">
+    <value>Eğitim İçeriği:</value>
+  </data>
+  <data name="GetMoreSection2Item1" xml:space="preserve">
+    <value>Öğrenciler ve araştırmacılar</value>
+  </data>
+  <data name="GetMoreSection2Item2" xml:space="preserve">
+    <value>Telekomünikasyon ve bilişim sektöründe çalışan profesyoneller</value>
+  </data>
+  <data name="GetMoreSection2Item3" xml:space="preserve">
+    <value>Teknoloji meraklıları ve başlangıç seviyesindeki katılımcılar</value>
+  </data>
+  <data name="GetMoreSection2Title" xml:space="preserve">
+    <value>Kimler Katılabilir?</value>
+  </data>
+  <data name="GetMoreSection3Item1" xml:space="preserve">
+    <value>Fiber optik teknolojisinin temel kavramlarını öğrenerek, sektörün geleceğine hazırlanın</value>
+  </data>
+  <data name="GetMoreSection3Item2" xml:space="preserve">
+    <value>Pratik uygulamalar ve gerçek örneklerle deneyim kazanma fırsatı</value>
+  </data>
+  <data name="GetMoreSection3Item3" xml:space="preserve">
+    <value>Sertifika ile bilgi ve becerilerinizi belgeleyin İster kariyerinizde ilerlemek, ister kişisel gelişiminize katkıda bulunmak için, temel fiber optik eğitimi ile teknolojinin kapılarını aralayın. Detaylı bilgi ve kayıt için bizimle iletişime geçebilirsiniz.</value>
+  </data>
+  <data name="GetMoreSection3Title" xml:space="preserve">
+    <value>Neden Katılmalısınız?</value>
+  </data>
+  <data name="HeroQuestions" xml:space="preserve">
+    <value>Kafamdaki tasarım acaba pratikte çalışıyor mu? Simülasyonu yaptım ama gerçek ortamda sonuçlar tutarlı mı? Fiziki bir deney ortamı kurmanın maliyeti çok mu yüksek?</value>
+  </data>
+  <data name="HeroSubtitle" xml:space="preserve">
+    <value>Gerçek fiber optik laboratuvarında deney yapmak artık çok kolay.</value>
+  </data>
+  <data name="HeroTitle" xml:space="preserve">
+    <value>RealFOLab ile,</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Anasayfa</value>
+  </data>
+  <data name="Infrastructure" xml:space="preserve">
+    <value>Altyapı</value>
+  </data>
+  <data name="InfrastructureDescription" xml:space="preserve">
+    <value>Laboratuvar altyapımız, ileri düzey fiber optik deneylerin gerçekleştirilmesine olanak sağlayan son teknoloji cihazlarla donatılmıştır. Gelişmiş ölçüm sistemleri, uzaktan erişim desteği ve otomatik veri toplama modülleri ile kullanıcılarımıza güvenli, hızlı ve verimli bir deney ortamı sunuyoruz.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Soyad</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Yükleniyor</value>
+  </data>
+  <data name="Loading1" xml:space="preserve">
+    <value>Yükleniyor</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Mesajınız Gönderildi</value>
+  </data>
+  <data name="Note1" xml:space="preserve">
+    <value>Tüm deneyler, uzaktan erişilebilen gerçek fiber optik laboratuvar altyapısı kullanılarak gerçekleştirilecektir.</value>
+  </data>
+  <data name="Note2" xml:space="preserve">
+    <value>Öğrencilerin, deneyler öncesinde ilgili teorik bilgileri gözden geçirmesi beklenmektedir.</value>
+  </data>
+  <data name="Note3" xml:space="preserve">
+    <value>Güvenlik protokolleri ve cihaz kullanım talimatları her deney öncesinde detaylı bir şekilde paylaşılacaktır.</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notlar</value>
+  </data>
+  <data name="Objective" xml:space="preserve">
+    <value>Amaç</value>
+  </data>
+  <data name="ObjectiveDescription" xml:space="preserve">
+    <value>Bu laboratuvar dersi, öğrencilerin fiber optik iletişim sistemlerinin temel prensiplerini, bileşenlerini ve ölçüm tekniklerini uygulamalı olarak öğrenmesini amaçlamaktadır.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="OkButton" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Hizmetlerimiz</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Genel Bakış</value>
+  </data>
+  <data name="P1" xml:space="preserve">
+    <value>Dünyanın her yerinden laboratuvara erişebilirsiniz.</value>
+  </data>
+  <data name="P2" xml:space="preserve">
+    <value>Burs veya araştırmacı olmak için kabul almanıza gerek yok.</value>
+  </data>
+  <data name="P3" xml:space="preserve">
+    <value>Üniversite veya araştırma merkezinizin bu pahalı altyapıya sahip olmaması artık fiber optik konusunda çalışmanıza engel değil.</value>
+  </data>
+  <data name="P4" xml:space="preserve">
+    <value>Laboratuvar erişiminizi kendi programlarınıza göre randevu sistemimizle planlayabilir. 7/24 erişim sağlayabilirsiniz.</value>
+  </data>
+  <data name="P5" xml:space="preserve">
+    <value>Simülasyon yerine gerçek fiber optik sistemlerle çalışabilir sonuçlarınızı doğrulayabilirsiniz.</value>
+  </data>
+  <data name="P6" xml:space="preserve">
+    <value>Otomatik veri toplama ve analiz araçlarıyla verilere hızlıca erişip ve analiz yapabilirsiniz, tüm sonuçlar kayıt altında.</value>
+  </data>
+  <data name="P7" xml:space="preserve">
+    <value>Birden fazla araştırmacı veya ekip, aynı platform üzerinden ortak deneyler gerçekleştirebilir. Disiplinler arası çalışmalar ve uluslararası işbirlikleri artık daha kolay.</value>
+  </data>
+  <data name="P8" xml:space="preserve">
+    <value>Laboratuvarın sorumluluğu bizde siz deneye odaklanın.</value>
+  </data>
+  <data name="P9" xml:space="preserve">
+    <value>Gerçek fiber optik laboratuvarlarımız ile lisansüstü araştırmacılara maliyet, erişim, esneklik ve işbirliği açısından önemli avantajlar sunarak hem akademik hem de pratik becerilerini geliştirmelerine olanak tanıyoruz.</value>
+  </data>
+  <data name="PageHeader" xml:space="preserve">
+    <value>Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</value>
+  </data>
+  <data name="Participation" xml:space="preserve">
+    <value>Katılım: Laboratuvar oturumlarına katılım ve deneylerin tamamlanması değerlendirmeye dahil edilecektir.</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="PhoneTitle" xml:space="preserve">
+    <value>Telefon Numarası</value>
+  </data>
+  <data name="PricingSubtitle" xml:space="preserve">
+    <value>Her biri sektör ihtiyaçlarına göre optimize edilmiş ürün yelpazemizle, iş süreçlerinizi kolaylaştırmaya hazırız.</value>
+  </data>
+  <data name="PricingTitle" xml:space="preserve">
+    <value>Ürünlerİmİz</value>
+  </data>
+  <data name="Product1Title" xml:space="preserve">
+    <value>Temel Fiber Optik Eğitimi</value>
+  </data>
+  <data name="Product1_Feature1" xml:space="preserve">
+    <value>Fiber optik nedir ve nasıl çalışır?</value>
+  </data>
+  <data name="Product1_Feature2" xml:space="preserve">
+    <value>Fiber tipleri ve yapısal özellikleri</value>
+  </data>
+  <data name="Product1_Feature3" xml:space="preserve">
+    <value>Işık iletimi ve kayıplar</value>
+  </data>
+  <data name="Product1_Feature4" xml:space="preserve">
+    <value>Fiber optik kabloların kurulumu ve bakımı</value>
+  </data>
+  <data name="Product1_Feature5" xml:space="preserve">
+    <value>Temel ölçüm ve test yöntemleri</value>
+  </data>
+  <data name="Product1_Feature6" xml:space="preserve">
+    <value>Güvenlik ve doğru kullanım pratikleri</value>
+  </data>
+  <data name="Product2Title" xml:space="preserve">
+    <value>Okullar İçin Dönemlik Fiber Optik Laboratuvar Deneyleri</value>
+  </data>
+  <data name="Product2_Feature1" xml:space="preserve">
+    <value>Geleceğin teknolojilerini yakından tanımak ve öğrencilere temel iletişim altyapısı bilgileri kazandırmak amacıyla fiber optik eğitim programımız, okul seviyesine uygun olarak tasarlanmıştır.</value>
+  </data>
+  <data name="Product2_Feature2" xml:space="preserve">
+    <value>Bu program sayesinde öğrenciler, fiber optik teknolojisinin temel kavramlarını öğrenirken, uygulamalı deneyimler de kazanabilirler.</value>
+  </data>
+  <data name="Product2_Feature3" xml:space="preserve">
+    <value>Bu laboratuvar dersi, öğrencilerin fiber optik iletişim sistemlerinin temel prensiplerini, bileşenlerini ve ölçüm tekniklerini uygulamalı olarak öğrenmesini amaçlamaktadır.</value>
+  </data>
+  <data name="Product3Title" xml:space="preserve">
+    <value>Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</value>
+  </data>
+  <data name="Product3_Feature1" xml:space="preserve">
+    <value>Dünyanın her yerinden laboratuvara erişebilirsiniz.</value>
+  </data>
+  <data name="Product3_Feature2" xml:space="preserve">
+    <value>Burs veya araştırmacı olmak için kabul almanıza gerek yok.</value>
+  </data>
+  <data name="Product3_Feature3" xml:space="preserve">
+    <value>Simülasyon yerine gerçek fiber optik sistemlerle çalışabilir sonuçlarınızı doğrulayabilirsiniz.</value>
+  </data>
+  <data name="Product3_Feature4" xml:space="preserve">
+    <value>Otomatik veri toplama ve analiz araçlarıyla verilere hızlıca erişip ve analiz yapabilirsiniz, tüm sonuçlar kayıt altında.</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>Ürünler</value>
+  </data>
+  <data name="QuickLinks" xml:space="preserve">
+    <value>Hızlı Erişim</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Daha Fazlası</value>
+  </data>
+  <data name="ReadMore1" xml:space="preserve">
+    <value>Daha Fazlası</value>
+  </data>
+  <data name="RemoveTimeConfirm" xml:space="preserve">
+    <value>saatini kaldırmak istediğinize emin misiniz</value>
+  </data>
+  <data name="Role_Atakan" xml:space="preserve">
+    <value>Yazılım Ekip Lideri - Teknik Destek</value>
+  </data>
+  <data name="Role_Bengisu" xml:space="preserve">
+    <value>Teknik Destek</value>
+  </data>
+  <data name="Role_Cemal" xml:space="preserve">
+    <value>RealRemoteLab Yönetici</value>
+  </data>
+  <data name="Role_Murat" xml:space="preserve">
+    <value>RealRemoteLab Yönetici</value>
+  </data>
+  <data name="Role_Ozcan" xml:space="preserve">
+    <value>Donanım Takım Lideri - Teknik Destek</value>
+  </data>
+  <data name="Role_Zehra" xml:space="preserve">
+    <value>Yazılım Geliştirici</value>
+  </data>
+  <data name="SampleCourseContent" xml:space="preserve">
+    <value>Örnek Ders İçeriği</value>
+  </data>
+  <data name="SelectDateTime" xml:space="preserve">
+    <value>Tarih ve saat seçiniz</value>
+  </data>
+  <data name="SelectOption" xml:space="preserve">
+    <value>Seçiniz</value>
+  </data>
+  <data name="SendMessageButton" xml:space="preserve">
+    <value>Mesaj Gönder</value>
+  </data>
+  <data name="Service1Desc" xml:space="preserve">
+    <value>Fiber optik altyapıya giriş yaparak temel bilgi ve becerilerin kazanılması amaçlanır.</value>
+  </data>
+  <data name="Service1Title" xml:space="preserve">
+    <value>Temel Fiber Optik Eğitimi</value>
+  </data>
+  <data name="Service2Desc" xml:space="preserve">
+    <value>Eğitim programlarına entegre edilebilecek, dönemlik fiber optik deney modülleri.</value>
+  </data>
+  <data name="Service2Title" xml:space="preserve">
+    <value>Okullar İçin Dönemlik Fiber Optik Laboratuvar Deneyleri</value>
+  </data>
+  <data name="Service3Desc" xml:space="preserve">
+    <value>Gelişmiş fiber optik sistemler üzerine deneysel çalışmalar için özel tasarlanmıştır.</value>
+  </data>
+  <data name="Service3Title" xml:space="preserve">
+    <value>Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>Hizmetler</value>
+  </data>
+  <data name="Services1" xml:space="preserve">
+    <value>Hizmetler</value>
+  </data>
+  <data name="Services2" xml:space="preserve">
+    <value>Hizmetler</value>
+  </data>
+  <data name="ServicesSubtitle" xml:space="preserve">
+    <value>Fiber optik teknolojileri alanında sunduğumuz eğitim ve laboratuvar hizmetlerimizi keşfedin.</value>
+  </data>
+  <data name="ServicesTitle" xml:space="preserve">
+    <value>Hİzmetler</value>
+  </data>
+  <data name="Step1Desc" xml:space="preserve">
+    <value>Gerçek bir fiber optik laboratuvarında çalışmaya hazır olun.</value>
+  </data>
+  <data name="Step1Feat1" xml:space="preserve">
+    <value>Fiber bağlantı ve kayıp ölçümü</value>
+  </data>
+  <data name="Step1Feat2" xml:space="preserve">
+    <value>EDFA kazanç analizi</value>
+  </data>
+  <data name="Step1Feat3" xml:space="preserve">
+    <value>WDM kanal karakterizasyonu</value>
+  </data>
+  <data name="Step1Feat4" xml:space="preserve">
+    <value>Optik spektrum ölçümleri</value>
+  </data>
+  <data name="Step1Title" xml:space="preserve">
+    <value>Deneyi Seçin</value>
+  </data>
+  <data name="Step2Feat1" xml:space="preserve">
+    <value>Kendi takviminize uygun bir saat seçin.</value>
+  </data>
+  <data name="Step2Feat2" xml:space="preserve">
+    <value>Her kullanıcıya özel zaman aralığı ayrılır.</value>
+  </data>
+  <data name="Step2Feat3" xml:space="preserve">
+    <value>Ders kapsamında veya bireysel çalışma için erişim imkanı sunulur.</value>
+  </data>
+  <data name="Step2Title" xml:space="preserve">
+    <value>Zamanlayın</value>
+  </data>
+  <data name="Step3Desc" xml:space="preserve">
+    <value>Tarayıcı üzerinden laboratuvara bağlanın:</value>
+  </data>
+  <data name="Step3Feat1" xml:space="preserve">
+    <value>Canlı kamera görüntüsüyle laboratuvarı izleyin</value>
+  </data>
+  <data name="Step3Feat2" xml:space="preserve">
+    <value>Lazerleri ve ölçüm cihazlarını kontrol edin</value>
+  </data>
+  <data name="Step3Feat3" xml:space="preserve">
+    <value>Anlık verileri grafiklerle takip edin</value>
+  </data>
+  <data name="Step3Title" xml:space="preserve">
+    <value>Deneyi Uzaktan Gerçekleştirin</value>
+  </data>
+  <data name="Step4Desc" xml:space="preserve">
+    <value>Deney süresince tüm ölçümler otomatik kaydedilir.</value>
+  </data>
+  <data name="Step4Feat1" xml:space="preserve">
+    <value>PDF rapor oluşturun</value>
+  </data>
+  <data name="Step4Feat2" xml:space="preserve">
+    <value>CSV / Excel veri çıktısı indirin</value>
+  </data>
+  <data name="Step4Feat3" xml:space="preserve">
+    <value>İleri düzey analiz için ham veriye erişin</value>
+  </data>
+  <data name="Step4Title" xml:space="preserve">
+    <value>Ölçüm Verilerini Alın</value>
+  </data>
+  <data name="Step5Desc" xml:space="preserve">
+    <value>Ders kapsamında yapılan deneylerde:</value>
+  </data>
+  <data name="Step5Feat1" xml:space="preserve">
+    <value>Eğitmenler deney sonuçlarını görebilir</value>
+  </data>
+  <data name="Step5Feat2" xml:space="preserve">
+    <value>Performansa göre geribildirim ve notlandırma yapılabilir</value>
+  </data>
+  <data name="Step5Feat3" xml:space="preserve">
+    <value>Grup deneyleri ve karşılaştırmalı analiz mümkün</value>
+  </data>
+  <data name="Step5Title" xml:space="preserve">
+    <value>Eğitmen Geri Bildirimi (Opsiyonel)</value>
+  </data>
+  <data name="Step6Feat1" xml:space="preserve">
+    <value>Üniversite öğrencileri (Elektrik-Elektronik, Fizik, Telekom)</value>
+  </data>
+  <data name="Step6Feat2" xml:space="preserve">
+    <value>Yüksek lisans / doktora araştırmacıları</value>
+  </data>
+  <data name="Step6Feat3" xml:space="preserve">
+    <value>Eğitim kurumları ve eğitmenler</value>
+  </data>
+  <data name="Step6Feat4" xml:space="preserve">
+    <value>Ar-Ge çalışanları</value>
+  </data>
+  <data name="Step6Title" xml:space="preserve">
+    <value>Kimler İçin?</value>
+  </data>
+  <data name="SubjectLabel" xml:space="preserve">
+    <value>Konu</value>
+  </data>
+  <data name="SubjectOption_Collaboration" xml:space="preserve">
+    <value>İşbirliği</value>
+  </data>
+  <data name="SubjectOption_Complaint" xml:space="preserve">
+    <value>Şikayet</value>
+  </data>
+  <data name="SubjectOption_InfoRequest" xml:space="preserve">
+    <value>Bilgi Talebi</value>
+  </data>
+  <data name="SubjectOption_Other" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="SubjectOption_Request" xml:space="preserve">
+    <value>İstek</value>
+  </data>
+  <data name="SubjectOption_Suggestion" xml:space="preserve">
+    <value>Öneri</value>
+  </data>
+  <data name="SubjectOption_TechSupport" xml:space="preserve">
+    <value>Teknik Destek</value>
+  </data>
+  <data name="SubjectTypeLabel" xml:space="preserve">
+    <value>Konu Tipi</value>
+  </data>
+  <data name="SubscribeSubtitle" xml:space="preserve">
+    <value>Ürünlerimiz hakkında detaylı bilgi için bizimle iletişime geçebilirsiniz.</value>
+  </data>
+  <data name="SubscribeTitle" xml:space="preserve">
+    <value>Detaylı Bilgi</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="SuccessMessage" xml:space="preserve">
+    <value>Mesajınız gönderildi!</value>
+  </data>
+  <data name="SuccessTitle" xml:space="preserve">
+    <value>Başarılı</value>
+  </data>
+  <data name="TeamMembers" xml:space="preserve">
+    <value>Takım Üyeleri</value>
+  </data>
+  <data name="TeamSubtitle" xml:space="preserve">
+    <value>akımımız; mühendislik, tasarım ve proje yönetimi alanlarında deneyimli profesyonellerden oluşur. Ortak hedefimiz: Kalite, güven ve sürdürülebilirlik.</value>
+  </data>
+  <data name="TeamTitle" xml:space="preserve">
+    <value>Takımımız</value>
+  </data>
+  <data name="Testimonial1Content" xml:space="preserve">
+    <value>Fiber optik teknolojilerine ilgim vardı ama nereden başlayacağımı bilmiyordum...</value>
+  </data>
+  <data name="Testimonial1Name" xml:space="preserve">
+    <value>Murat B.</value>
+  </data>
+  <data name="Testimonial1Title" xml:space="preserve">
+    <value>Elektrik-Elektronik Mühendisliği Öğrencisi</value>
+  </data>
+  <data name="Testimonial2Content" xml:space="preserve">
+    <value>Öğrencilerim için teknoloji temelli bir deneyim arıyordum...</value>
+  </data>
+  <data name="Testimonial2Name" xml:space="preserve">
+    <value>Elif K.</value>
+  </data>
+  <data name="Testimonial2Title" xml:space="preserve">
+    <value>Fizik Öğretmeni</value>
+  </data>
+  <data name="Testimonial3Content" xml:space="preserve">
+    <value>Saha mühendisi olarak birçok ekipmanla çalıştım ama bu platform sayesinde...</value>
+  </data>
+  <data name="Testimonial3Name" xml:space="preserve">
+    <value>Selin A.</value>
+  </data>
+  <data name="Testimonial3Title" xml:space="preserve">
+    <value>Telekom Sektöründe Çalışan</value>
+  </data>
+  <data name="Testimonial4Content" xml:space="preserve">
+    <value>Disiplinler arası bir çalışmamızda optik analizlere ihtiyaç duyduk...</value>
+  </data>
+  <data name="Testimonial4Name" xml:space="preserve">
+    <value>Kenan T.</value>
+  </data>
+  <data name="Testimonial4Title" xml:space="preserve">
+    <value>Proje Koordinatörü</value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>Görüşleriniz</value>
+  </data>
+  <data name="TestimonialsSubtitle" xml:space="preserve">
+    <value>Müşteri memnuniyetine verdiğimiz önem, sizlerin değerli görüşleriyle daha da güçleniyor.</value>
+  </data>
+  <data name="TestimonialsTitle" xml:space="preserve">
+    <value>Görüşleriniz</value>
+  </data>
+  <data name="WatchVideo" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Week1Experiment" xml:space="preserve">
+    <value>Farklı konnektör türlerinin incelenmesi ve bağlantı tekniklerinin uygulanması.</value>
+  </data>
+  <data name="Week1Goal" xml:space="preserve">
+    <value>Fiber optik kabloların yapısını, kullanım alanlarını ve konnektör tiplerinin özelliklerini anlamak.</value>
+  </data>
+  <data name="Week1Title" xml:space="preserve">
+    <value>Hafta 1: Fiber Optik Kablolar ve Elemanların Tanıtımı</value>
+  </data>
+  <data name="Week1Topic" xml:space="preserve">
+    <value>Fiber optik kabloların türleri ve temel bileşenler (patch kablolar, pigtail kablolar, konnektör çeşitleri: SC, LC, FC vb.).</value>
+  </data>
+  <data name="Week2Experiment" xml:space="preserve">
+    <value>Füzyon ekleme cihazı ile fiber optik kablo bağlantısı gerçekleştirme.</value>
+  </data>
+  <data name="Week2Goal" xml:space="preserve">
+    <value>Ek yapım süreçlerini öğrenmek ve düşük kayıplı bağlantılar oluşturma becerisi kazanmak.</value>
+  </data>
+  <data name="Week2Title" xml:space="preserve">
+    <value>Hafta 2: Fiber Optik Ek Yapımı</value>
+  </data>
+  <data name="Week2Topic" xml:space="preserve">
+    <value>Fiber optik kablolarda ek yapım teknikleri (füzyon ekleme, mekanik ekleme).</value>
+  </data>
+  <data name="Week3Experiment" xml:space="preserve">
+    <value>Optik güç ölçer ile sinyal gücünün ölçülmesi ve sonuçların analizi.</value>
+  </data>
+  <data name="Week3Goal" xml:space="preserve">
+    <value>Optik sinyal gücünü doğru bir şekilde ölçme ve analiz etme becerisi geliştirmek.</value>
+  </data>
+  <data name="Week3Title" xml:space="preserve">
+    <value>Hafta 3: Fiber Optik Cihazlar - Optik Güç Ölçer ve Güç Kaynağı</value>
+  </data>
+  <data name="Week3Topic" xml:space="preserve">
+    <value>Optik güç ölçer ve güç kaynağının tanıtımı, ölçüm prensipleri.</value>
+  </data>
+  <data name="WeeklyCoursePlan" xml:space="preserve">
+    <value>Haftalık Ders Planı</value>
+  </data>
+  <data name="WeeklyReports" xml:space="preserve">
+    <value>Haftalık Raporlar: Her deney sonrası öğrenciler, ölçüm sonuçlarını ve analizlerini içeren bir rapor sunacaktır.</value>
+  </data>
+  <data name="WhyUs1Content" xml:space="preserve">
+    <value>Laboratuvarımızda, gerçek zamanlı veri iletimi ve analiz imkanlarıyla, fiber optik komponentlerin performansını ve özelliklerini yakından inceleyebilirsiniz. Ayrıca, gelişmiş ölçüm cihazlarıyla, fiber optik teknolojilerinin temel prensiplerini öğrenirken, yenilikçi projeler geliştirme fırsatı bulabilirsiniz.</value>
+  </data>
+  <data name="WhyUs1Title" xml:space="preserve">
+    <value>Optik ışık kaynakları ve ölçüm cihazlarının kontrolü tamamen sizde</value>
+  </data>
+  <data name="WhyUs2Content" xml:space="preserve">
+    <value>Evet, şaşırdınız değil mi? Pasif komponentlerden optik kuplör, zayıflatıcı, optik filtre gibi pasif malzemeler artık sizin kontrolünüzde, deneyleriniz artık çok daha kolay.</value>
+  </data>
+  <data name="WhyUs2Title" xml:space="preserve">
+    <value>Daha önce yaşamadığınız bir deneyime hazır mısınız? Pasif fiber optik komponentlerin kontrolü de artık sizde</value>
+  </data>
+  <data name="WhyUs3Content" xml:space="preserve">
+    <value>Katılımcılara uygulamalı eğitim ve araştırma ortamı sağlayarak, fiber optik teknolojilerinde uzmanlaşmalarını desteklemek ve bu alandaki yenilikleri yakından takip etmelerini sağlamaktır. Gerçek bir deney deneyimi yaşamak için bizimle iletişime geçebilirsiniz.</value>
+  </data>
+  <data name="WhyUs3Title" xml:space="preserve">
+    <value>Amacımız</value>
+  </data>
+  <data name="WorkProcess" xml:space="preserve">
+    <value>İş Süreci</value>
+  </data>
+  <data name="WorkProcessDescription" xml:space="preserve">
+    <value>Sunduğumuz projelerde başarıya ulaşmak için uyguladığımız adım adım iş sürecimiz aşağıdaki gibidir. Her aşama, ihtiyaçlarınıza özel çözüm sunmayı hedefler.</value>
+  </data>
+</root>

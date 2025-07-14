@@ -1,4 +1,6 @@
-﻿
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
 @{
     ViewData["Title"] = "GetMore3";
     Layout = "~/Views/UILayout/Index.cshtml";
@@ -11,11 +13,11 @@
         <div class="container">
             <nav class="breadcrumbs">
                 <ol>
-                    <li><a href="/Services/Index/">Hizmetler</a></li>
-                    <li class="current">Detaylar</li>
+                    <li><a href="/Services/Index/">@localizer["BreadcrumbServices"]</a></li>
+                    <li class="current">@localizer["BreadcrumbDetails"]</li>
                 </ol>
             </nav>
-            <h1>Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</h1>
+            <h1>@localizer["PageHeader"]</h1>
         </div>
     </div><!-- End Page Title -->
 
@@ -40,60 +42,29 @@
 
                             <div class="article-content" data-aos="fade-up" data-aos-delay="100">
                                 <div class="content-header">
-                                    <h1 class="title">Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</h1>
+                                    <h1 class="title">@localizer["ContentTitle"]</h1>
                                 </div>
                             </div>
 
                             <div class="content">
-                                <p>
-                                    Dünyanın her yerinden laboratuvara erişebilirsiniz.
-                                </p>
-                                <br />
-                                <p>
-                                    Burs veya araştırmacı olmak için kabul almanıza gerek yok.
-                                </p>
-                                <br />
-                                <p>
-                                    Üniversite veya araştırma merkezinizin bu pahalı altyapıya sahip olmaması artık fiber optik konusunda çalışmanıza engel değil.
-                                </p>
-                                <br />
-                                <p>
-                                    Laboratuvar erişiminizi kendi programlarınıza göre randevu sistemimizle planlayabilir. 7/24 erişim sağlayabilirsiniz.
-                                </p>
-                                <br />
-                                <p>
-                                    Simülasyon yerine gerçek fiber optik sistemlerle çalışabilir sonuçlarınızı doğrulayabilirsiniz.
-                                </p>
-                                <br />
-                                <p>
-                                    Otomatik veri toplama ve analiz araçlarıyla verilere hızlıca erişip ve analiz yapabilirsiniz, tüm sonuçlar kayıt altında.
-                                </p>
-                                <br />
-                                <p>
-                                    Birden fazla araştırmacı veya ekip, aynı platform üzerinden ortak deneyler gerçekleştirebilir.
-                                    Disiplinler arası çalışmalar ve uluslararası işbirlikleri artık daha kolay.
-
-                                </p>
-                                <br />
-                                <p>
-                                    Laboratuvarın sorumluluğu bizde siz deneye odaklanın.
-                                </p>
-                                <br />
-                                <p>
-                                    Gerçek fiber optik laboratuvarlarımız ile lisansüstü araştırmacılara maliyet, erişim, esneklik ve işbirliği açısından önemli avantajlar sunarak hem akademik hem de pratik becerilerini geliştirmelerine olanak tanıyoruz.
-                                </p>
-                                <div class="content-image right-aligned">
-                                </div>
+                                <p>@localizer["P1"]</p><br />
+                                <p>@localizer["P2"]</p><br />
+                                <p>@localizer["P3"]</p><br />
+                                <p>@localizer["P4"]</p><br />
+                                <p>@localizer["P5"]</p><br />
+                                <p>@localizer["P6"]</p><br />
+                                <p>@localizer["P7"]</p><br />
+                                <p>@localizer["P8"]</p><br />
+                                <p>@localizer["P9"]</p>
                             </div>
-                </section><!-- /Blog Details Section -->
+                        </article>
 
+                    </div>
+                </section><!-- /Blog Details Section -->
 
             </div>
 
         </div>
-
-    </div>
     </div>
 
 </main>
-

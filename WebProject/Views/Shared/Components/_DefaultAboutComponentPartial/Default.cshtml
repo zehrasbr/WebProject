@@ -1,9 +1,12 @@
-﻿    <!-- About Section -->
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
+<!-- About Section -->
 <section id="about" class="about section">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-        <h2>Hakkımızda</h2>
+        <h2>@localizer["AboutTitle"]</h2>
     </div><!-- End Section Title -->
 
     <div class="container">
@@ -12,17 +15,17 @@
 
             <div class="col-lg-11 content" data-aos="fade-up" data-aos-delay="100">
                 <p>
-                    Gelişmiş teknolojik altyapımızla, temel fiber optik iletişim ve uygulamaları alanında gerçek zamanlı deneyler yapabileceğiniz modern laboratuvarımız sizlere hizmet veriyor. Bu laboratuvarda, fiber optik iletişim sistemlerinin tasarımı, testi ve analizi gibi çeşitli deneyleri gerçekleştirerek, öğrencilere, araştırmacılara ve endüstri profesyonellerine pratik ve güncel bilgiler sunuyoruz.
-                 
+                    @localizer["AboutDescription"]
                 </p>
-                 <ul>
-                <li><i class="bi bi-check2-circle"></i> <span>   Gerçek bir deneysel deneyim sunuyoruz.</span></li>
-                </ul> 
+                <ul>
+                    <li><i class="bi bi-check2-circle"></i> <span>@localizer["AboutFeature1"]</span></li>
+                </ul>
             </div>
 
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                <p> </p>
-              <a href="/About/Index/" class="read-more"><span>Daha Fazlası</span><i class="bi bi-arrow-right"></i></a> 
+                <a href="/About/Index/" class="read-more">
+                    <span>@localizer["ReadMore"]</span><i class="bi bi-arrow-right"></i>
+                </a>
             </div>
 
         </div>

@@ -4,7 +4,7 @@ using System;
 
 namespace WebProject.Data
 {
-    public class AppDbContextFactory /*: IDesignTimeDbContextFactory<RRLContext>*/
+    public class AppDbContextFactory /* : IDesignTimeDbContextFactory<RRLContext>*/
     {
         //public RRLContext CreateDbContext(string[] args)
         //{

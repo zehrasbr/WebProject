@@ -1,34 +1,37 @@
-using Microsoft.EntityFrameworkCore;
-using System;
-using WebProject;
-using WebProject.Data;
-
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+// ? Localization servisi tanýmý
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+// ? MVC + view localization
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization();
 
 var app = builder.Build();
 
-//builder.Services.AddDbContext<RRLContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// ? Dil desteði kültürleri
+var supportedCultures = new[] { "tr", "en" };
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture("tr")
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
 
+app.UseRequestLocalization(localizationOptions);
 
-
-// Configure the HTTP request pipeline.
+// Diðer middlewareler
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
+// Route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

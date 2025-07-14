@@ -1,4 +1,6 @@
 ﻿@model WebProject.Models.Appointment
+@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
 
 <!-- CSS -->
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
@@ -6,12 +8,12 @@
 
 <section id="contact" class="contact section">
     <div class="container section-title mb-3">
-        <h2>Randevu Al</h2>
-        <h5 class="mb-0">Sorularınız, talepleriniz veya görüşmek istediğiniz konular için randevu formumuzu doldurabilirsiniz.</h5>
+        <h2>@localizer["GetAppointment"]</h2>
+        <h5 class="mb-0">@localizer["AppointmentSubtitle"]</h5>
     </div>
 
     <style>
-        /* ... aynı css kodlar ... */
+        /* CSS kodları aynen kalabilir */
         html, body {
             height: 100%;
             margin: 0;
@@ -23,7 +25,7 @@
         }
 
         #calendar {
-            max-width: 600px;
+            max-width: 800px;
             margin: 20px auto 10px auto;
             background-color: white;
             padding: 15px;
@@ -86,30 +88,30 @@
                     @Html.AntiForgeryToken()
                     <div class="row gy-4">
                         <div class="col-md-6">
-                            <label>Ad</label>
+                            <label>@localizer["FirstName"]</label>
                             <input type="text" name="Name" class="form-control" required />
                         </div>
                         <div class="col-md-6">
-                            <label>Soyad</label>
+                            <label>@localizer["LastName"]</label>
                             <input type="text" name="Surname" class="form-control" required />
                         </div>
                         <div class="col-md-6">
-                            <label>Email</label>
+                            <label>@localizer["Email"]</label>
                             <input type="email" name="Email" class="form-control" required />
                         </div>
                         <div class="col-md-6">
-                            <label>Tarih ve Saat</label>
-                            <input type="text" name="DateTime" id="DateTime" class="form-control" placeholder="Tarih ve saat seçiniz" readonly data-bs-toggle="modal" data-bs-target="#dateTimeModal" />
+                            <label>@localizer["DateTime"]</label>
+                            <input type="text" name="DateTime" id="DateTime" class="form-control" placeholder="@localizer["SelectDateTime"]" readonly data-bs-toggle="modal" data-bs-target="#dateTimeModal" />
                         </div>
                         <div class="col-md-12">
-                            <label>Açıklama</label>
+                            <label>@localizer["Description"]</label>
                             <textarea name="Message" rows="6" class="form-control" required></textarea>
                         </div>
                         <div class="col-md-12 text-center">
-                            <div class="loading">Yükleniyor</div>
+                            <div class="loading">@localizer["Loading"]</div>
                             <div class="error-message"></div>
-                            <div class="sent-message">Randevu Oluşturuldu</div>
-                            <button type="submit" class="btn btn-primary mt-3">Randevu Oluştur</button>
+                            <div class="sent-message">@localizer["AppointmentCreated"]</div>
+                            <button type="submit" class="btn btn-primary mt-3">@localizer["CreateAppointment"]</button>
                         </div>
                     </div>
                 </form>
@@ -122,8 +124,8 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content p-3">
                 <div class="modal-header">
-                    <h5 class="modal-title">Tarih ve Saat Seç</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                    <h5 class="modal-title">@localizer["SelectDateTime"]</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="@localizer["Close"]"></button>
                 </div>
                 <div class="modal-body">
                     <div id="calendar"></div>
@@ -195,7 +197,7 @@
                     },
                     events: events,
                     eventClick: function (info) {
-                        if (confirm(`"${info.event.title.replace(/\n/g, ' ')}" saatini kaldırmak istediğinize emin misiniz?`)) {
+                        if (confirm(`"${info.event.title.replace(/\n/g, ' ')}" ${localizer["RemoveTimeConfirm"]}?`)) {
                             info.event.remove();
 
                             const date = info.event.startStr.slice(0, 10);
@@ -217,8 +219,8 @@
                         const timeRange = arg.event.title.split(' - ');
                         const innerHtml = document.createElement('div');
                         innerHtml.style.whiteSpace = 'pre-line';
-                        innerHtml.style.fontSize = '0.9em';
-                        innerHtml.style.lineHeight = '1.2em';
+                        innerHtml.style.fontSize = '1.1em';
+                        innerHtml.style.lineHeight = '1.3em';
                         innerHtml.style.textAlign = 'center';
                         innerHtml.style.color = 'royalblue';
                         innerHtml.style.fontWeight = 'bold';
@@ -293,9 +295,9 @@
         document.getElementById('appointmentForm').addEventListener('submit', function (e) {
             Swal.fire({
                 icon: 'success',
-                title: 'Başarılı',
-                text: 'Randevu oluşturuldu!',
-                confirmButtonText: 'Tamam'
+                title: localizer["Success"],
+                text: localizer["AppointmentCreated"],
+                confirmButtonText: localizer["OK"]
             }).then(() => {
                 e.target.submit();
             });
@@ -305,4 +307,3 @@
 
     });
 </script>
-

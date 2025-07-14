@@ -1,51 +1,44 @@
-﻿<!-- Why Us Section -->
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
+<!-- Why Us Section -->
 <section id="why-us" class="section why-us light-background" data-builder="section">
-
     <div class="container-fluid">
-
         <div class="row gy-4">
 
             <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
-
                 <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
 
                     <div class="faq-item faq-active">
-
-                        <h3><span></span>Optik ışık kaynakları ve ölçüm cihazlarının kontrolü tamamen sizde,</h3>
+                        <h3><span></span>@localizer["WhyUs1Title"]</h3>
                         <div class="faq-content">
-                            <p>Laboratuvarımızda, gerçek zamanlı veri iletimi ve analiz imkanlarıyla, fiber optik komponentlerin performansını ve özelliklerini yakından inceleyebilirsiniz. Ayrıca, gelişmiş ölçüm cihazlarıyla, fiber optik teknolojilerinin temel prensiplerini öğrenirken, yenilikçi projeler geliştirme fırsatı bulabilirsiniz.</p>
+                            <p>@localizer["WhyUs1Content"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
 
                     <div class="faq-item">
-                        <h3>
-                            <span></span> Daha önce yaşamadığınız bir deneyime hazır mısınız?
-                            Pasif fiber optik komponentlerin kontrolü de artık sizde,
-                        </h3>
+                        <h3><span></span>@localizer["WhyUs2Title"]</h3>
                         <div class="faq-content">
-                            <p>Evet, şaşırdınız değil mi? Pasif komponentlerden optik kuplör, zayıflatıcı, optik filtre gibi pasif malzemeler artık sizin kontrolünüzde, deneyleriniz artık çok daha kolay.</p>
+                            <p>@localizer["WhyUs2Content"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
 
                     <div class="faq-item">
-                        <h3><span></span>Amacımız, </h3>
+                        <h3><span></span>@localizer["WhyUs3Title"]</h3>
                         <div class="faq-content">
-                            <p>Katılımcılara uygulamalı eğitim ve araştırma ortamı sağlayarak, fiber optik teknolojilerinde uzmanlaşmalarını desteklemek ve bu alandaki yenilikleri yakından takip etmelerini sağlamaktır. Gerçek bir deney deneyimi yaşamak için bizimle iletişime geçebilirsiniz.</p>
+                            <p>@localizer["WhyUs3Content"]</p>
                         </div>
                         <i class="faq-toggle bi bi-chevron-right"></i>
                     </div><!-- End Faq item-->
 
                 </div>
-
             </div>
 
             <div class="col-lg-5 order-1 order-lg-2 why-us-img">
                 <img src="~/web/assets/img/why-us.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
             </div>
         </div>
-
     </div>
-
 </section><!-- /Why Us Section -->
