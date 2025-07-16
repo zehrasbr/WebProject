@@ -7,6 +7,48 @@
     var switchLabel = currentCulture == "tr" ? "EN" : "TR";
 }
 
+<style>
+    .btn-circle {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        user-select: none;
+    }
+
+    .btn-dashboard {
+        background-color: #47B2E4; 
+        color: white;
+        border: none;
+    }
+
+        .btn-dashboard:hover {
+            background-color: #0d6efd;
+            color: white;
+            text-decoration: none;
+        }
+
+    .btn-lang-switch {
+        background-color: white;
+        border: 2px solid #0d6efd;
+        color: #0d6efd;
+    }
+
+        .btn-lang-switch:hover {
+            background-color: #0d6efd;
+            color: white;
+            text-decoration: none;
+        }
+</style>
+
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
@@ -36,17 +78,19 @@
 
         <a class="btn-getstarted me-2" href="/Appointment/Index/">@localizer["GetAppointment"]</a>
 
-        <a class="btn-getstarted d-flex align-items-center justify-content-center me-2"
-           href="/Dashboard/Index/"
+   
+        <a class="btn-circle btn-dashboard me-2"
+           href="https://realremotelab.com"
            title="@localizer["Dashboard"]"
-           style="width: 40px; height: 40px; padding: 0;">
+           aria-label="@localizer["Dashboard"]">
             <i class="bi bi-speedometer2"></i>
         </a>
 
-        <!-- Tekli Dil Değiştirici Buton -->
-        <a class="btn-getstarted"
+   
+        <a class="btn-circle"
            href="/Culture/SetCulture?culture=@switchTo"
-           title="@localizer["ChangeLanguage"]">@switchLabel</a>
+           title="@localizer["ChangeLanguage"]"
+           aria-label="@localizer["ChangeLanguage"]">@switchLabel</a>
 
     </div>
 </header>

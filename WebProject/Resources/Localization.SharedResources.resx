@@ -172,7 +172,7 @@
     <value>Size en iyi şekilde yardımcı olabilmemiz için tüm soru, öneri veya taleplerinizi aşağıdaki iletişim formunu kullanarak bize iletebilirsiniz.</value>
   </data>
   <data name="ContactTitle" xml:space="preserve">
-    <value>İletişim</value>
+    <value>İletİşİm</value>
   </data>
   <data name="ContentTitle" xml:space="preserve">
     <value>Lisansüstü Araştırmacılar İçin İleri Düzey Fiber Optik Deneyler</value>
@@ -555,6 +555,9 @@
   <data name="Role_Zehra" xml:space="preserve">
     <value>Yazılım Geliştirici</value>
   </data>
+  <data name="Role_Zuhal" xml:space="preserve">
+    <value>Teknik Destek</value>
+  </data>
   <data name="SampleCourseContent" xml:space="preserve">
     <value>Örnek Ders İçeriği</value>
   </data>
@@ -784,7 +787,7 @@
     <value>Müşteri memnuniyetine verdiğimiz önem, sizlerin değerli görüşleriyle daha da güçleniyor.</value>
   </data>
   <data name="TestimonialsTitle" xml:space="preserve">
-    <value>Görüşleriniz</value>
+    <value>Görüşlerİnİz</value>
   </data>
   <data name="WatchVideo" xml:space="preserve">
     <value>Video</value>
@@ -850,7 +853,7 @@
     <value>Amacımız</value>
   </data>
   <data name="WorkProcess" xml:space="preserve">
-    <value>İş Süreci</value>
+    <value>İş Sürecİ</value>
   </data>
   <data name="WorkProcessDescription" xml:space="preserve">
     <value>Sunduğumuz projelerde başarıya ulaşmak için uyguladığımız adım adım iş sürecimiz aşağıdaki gibidir. Her aşama, ihtiyaçlarınıza özel çözüm sunmayı hedefler.</value>

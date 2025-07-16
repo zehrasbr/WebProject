@@ -13,7 +13,6 @@
     </div>
 
     <style>
-        /* CSS kodları aynen kalabilir */
         html, body {
             height: 100%;
             margin: 0;
@@ -26,65 +25,67 @@
 
         #calendar {
             max-width: 800px;
-            margin: 20px auto 10px auto;
-            background-color: white;
+            background-color: #fff;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .fc-daygrid-day-number {
-            color: black;
+        .fc-daygrid-day-number, .fc-col-header-cell a {
+            color: #000;
             font-weight: bold;
             text-decoration: none !important;
         }
 
-        .fc-col-header-cell a {
-            text-decoration: none !important;
+        .fc-daygrid-day, .fc-col-header-cell {
+            border: 1px solid #ddd !important;
         }
 
         .fc-daygrid-day {
             height: 100px;
-            border: 1px solid #ddd !important;
             position: relative;
-        }
-
-        .fc-col-header-cell {
-            border: 1px solid #ddd !important;
         }
 
         .fc-scrollgrid-sync-table {
             border-collapse: collapse !important;
         }
 
-        #timeSlotsContainer {
-            margin-top: 10px;
+        #timeSlotsContainer button {
+            margin-bottom: 8px;
+            width: 80%;
+            min-width: 110px;
+            padding: 10px;
         }
 
-            #timeSlotsContainer button {
-                margin: 3px 3px 3px 0;
+            #timeSlotsContainer button.active {
+                background-color: royalblue;
+                color: #fff;
             }
 
-                #timeSlotsContainer button.active {
-                    background-color: royalblue;
-                    color: white;
-                }
-
-                #timeSlotsContainer button:disabled {
-                    background-color: #e0e0e0 !important;
-                    color: #888 !important;
-                    cursor: not-allowed;
-                }
+            #timeSlotsContainer button:disabled {
+                background-color: #e0e0e0 !important;
+                color: #888 !important;
+                cursor: not-allowed;
+            }
 
         .form-control, .form-select {
             border-radius: 12px !important;
+        }
+
+        nav a, nav .nav-link, nav .dropdown-toggle {
+            text-decoration: none !important;
+            border-bottom: none !important;
         }
     </style>
 
     <div class="container form-container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <form id="appointmentForm" action="@Url.Action("Index", "Appointment")" method="post" class="php-email-form" novalidate>
+                <form id="appointmentForm"
+                      action="@Url.Action("Index","Appointment")"
+                      method="post"
+                      class="php-email-form"
+                      novalidate>
                     @Html.AntiForgeryToken()
                     <div class="row gy-4">
                         <div class="col-md-6">
@@ -101,7 +102,14 @@
                         </div>
                         <div class="col-md-6">
                             <label>@localizer["DateTime"]</label>
-                            <input type="text" name="DateTime" id="DateTime" class="form-control" placeholder="@localizer["SelectDateTime"]" readonly data-bs-toggle="modal" data-bs-target="#dateTimeModal" />
+                            <input type="text"
+                                   name="DateTime"
+                                   id="DateTime"
+                                   class="form-control"
+                                   placeholder="@localizer["SelectDateTime"]"
+                                   readonly
+                                   data-bs-toggle="modal"
+                                   data-bs-target="#dateTimeModal" />
                         </div>
                         <div class="col-md-12">
                             <label>@localizer["Description"]</label>
@@ -111,7 +119,9 @@
                             <div class="loading">@localizer["Loading"]</div>
                             <div class="error-message"></div>
                             <div class="sent-message">@localizer["AppointmentCreated"]</div>
-                            <button type="submit" class="btn btn-primary mt-3">@localizer["CreateAppointment"]</button>
+                            <button type="submit" class="btn btn-primary mt-3">
+                                @localizer["CreateAppointment"]
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -125,11 +135,15 @@
             <div class="modal-content p-3">
                 <div class="modal-header">
                     <h5 class="modal-title">@localizer["SelectDateTime"]</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="@localizer["Close"]"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="@localizer["Close"]"></button>
                 </div>
-                <div class="modal-body">
-                    <div id="calendar"></div>
-                    <div id="timeSlotsContainer" class="d-flex flex-wrap"></div>
+
+                <div class="modal-body d-flex flex-row">
+                    <div id="calendar" style="flex: 2;"></div>
+                    <div id="timeSlotsContainer"
+                         class="d-flex flex-column align-items-center ms-3"
+                         style="flex: 1;"></div>
                 </div>
             </div>
         </div>
@@ -139,9 +153,8 @@
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- SweetAlert2 CDN -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const timeSlots = [
@@ -165,7 +178,7 @@
         };
 
         const calendarEl = document.getElementById('calendar');
-        const timeSlotsContainer = document.getElementById('timeSlotsContainer');
+        const timeSlotsContEl = document.getElementById('timeSlotsContainer');
         const dateTimeInput = document.getElementById('DateTime');
 
         let selectedDate = null;
@@ -175,59 +188,41 @@
         const modalEl = document.getElementById('dateTimeModal');
         const modal = new bootstrap.Modal(modalEl);
 
-        modalEl.addEventListener('shown.bs.modal', function () {
+        const localizerStrings = {
+            success: '@localizer["Success"]',
+            appointmentCreated: '@localizer["AppointmentCreated"]',
+            ok: '@localizer["OK"]'
+        };
+
+        modalEl.addEventListener('shown.bs.modal', () => {
             if (!calendar) {
                 calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
                     height: 500,
                     selectable: true,
-                    dateClick: function (info) {
+                    dateClick(info) {
                         if (selectedDate && selectedDate !== info.dateStr) {
-                            const existingEventId = `event-${selectedDate}`;
-                            const existingEvent = calendar.getEventById(existingEventId);
-                            if (existingEvent) {
-                                existingEvent.remove();
-                                events = events.filter(e => e.id !== existingEventId);
+                            const existing = calendar.getEventById(`event-${selectedDate}`);
+                            if (existing) {
+                                existing.remove();
+                                events = events.filter(e => e.id !== existing.id);
                                 dateTimeInput.value = '';
                             }
                         }
-
                         selectedDate = info.dateStr;
                         renderTimeSlots(selectedDate);
                     },
                     events: events,
-                    eventClick: function (info) {
-                        if (confirm(`"${info.event.title.replace(/\n/g, ' ')}" ${localizer["RemoveTimeConfirm"]}?`)) {
-                            info.event.remove();
-
-                            const date = info.event.startStr.slice(0, 10);
-                            const time = info.event.title.split('\n')[0];
-
-                            events = events.filter(e => e.id !== info.event.id);
-
-                            if (selectedDate === date) {
-                                selectedDate = null;
-                                renderTimeSlots(null);
-                            }
-
-                            if (dateTimeInput.value.startsWith(date) && dateTimeInput.value.includes(time)) {
-                                dateTimeInput.value = '';
-                            }
-                        }
-                    },
-                    eventContent: function (arg) {
-                        const timeRange = arg.event.title.split(' - ');
-                        const innerHtml = document.createElement('div');
-                        innerHtml.style.whiteSpace = 'pre-line';
-                        innerHtml.style.fontSize = '1.1em';
-                        innerHtml.style.lineHeight = '1.3em';
-                        innerHtml.style.textAlign = 'center';
-                        innerHtml.style.color = 'royalblue';
-                        innerHtml.style.fontWeight = 'bold';
-
-                        innerHtml.textContent = timeRange[0] + '\n-\n' + timeRange[1];
-
-                        return { domNodes: [innerHtml] };
+                    eventContent(arg) {
+                        const [s, e] = arg.event.title.split(' - ');
+                        const div = document.createElement('div');
+                        Object.assign(div.style, {
+                            whiteSpace: 'pre-line', fontSize: '1.05em',
+                            lineHeight: '1.25em', textAlign: 'center',
+                            color: 'royalblue', fontWeight: 'bold'
+                        });
+                        div.textContent = `${s}\n-\n${e}`;
+                        return { domNodes: [div] };
                     }
                 });
             }
@@ -235,75 +230,63 @@
         });
 
         function renderTimeSlots(dateStr) {
-            timeSlotsContainer.innerHTML = '';
+            timeSlotsContEl.innerHTML = '';
             if (!dateStr) return;
 
-            const bookedForDate = bookedSlots[dateStr] || [];
-
+            const booked = bookedSlots[dateStr] || [];
             timeSlots.forEach(slot => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = 'btn btn-outline-primary';
-                btn.style.minWidth = '110px';
                 btn.textContent = `${slot.start} - ${slot.end}`;
-
-                btn.disabled = bookedForDate.includes(slot.start);
+                btn.disabled = booked.includes(slot.start);
 
                 btn.addEventListener('click', () => {
                     if (btn.disabled) return;
 
-                    document.querySelectorAll('#timeSlotsContainer button').forEach(b => b.classList.remove('active'));
+                    timeSlotsContEl.querySelectorAll('button').forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
-                    if (selectedDate && calendar) {
-                        const existingEventId = `event-${selectedDate}`;
-                        const existingEvent = calendar.getEventById(existingEventId);
-                        if (existingEvent) {
-                            existingEvent.remove();
-                            events = events.filter(e => e.id !== existingEventId);
-                        }
+                    const evtId = `event-${dateStr}`;
+                    const oldEvt = calendar.getEventById(evtId);
+                    if (oldEvt) {
+                        oldEvt.remove();
+                        events = events.filter(e => e.id !== evtId);
                     }
 
                     dateTimeInput.value = `${dateStr} ${slot.start} - ${slot.end}`;
 
-                    const startDateTime = new Date(dateStr + 'T' + slot.start);
-                    const endDateTime = new Date(dateStr + 'T' + slot.end);
-
-                    const eventId = `event-${dateStr}`;
-
                     const newEvent = {
-                        id: eventId,
+                        id: evtId,
                         title: `${slot.start} - ${slot.end}`,
-                        start: startDateTime.toISOString(),
-                        end: endDateTime.toISOString(),
+                        start: `${dateStr}T${slot.start}`,
+                        end: `${dateStr}T${slot.end}`,
                         allDay: false,
                         backgroundColor: 'royalblue',
                         borderColor: 'royalblue',
                         textColor: 'white'
                     };
-
                     events.push(newEvent);
                     calendar.addEvent(newEvent);
-
                     modal.hide();
                 });
-
-                timeSlotsContainer.appendChild(btn);
+                timeSlotsContEl.appendChild(btn);
             });
         }
 
         document.getElementById('appointmentForm').addEventListener('submit', function (e) {
+            e.preventDefault(); 
+
             Swal.fire({
                 icon: 'success',
-                title: localizer["Success"],
-                text: localizer["AppointmentCreated"],
-                confirmButtonText: localizer["OK"]
-            }).then(() => {
-                e.target.submit();
+                title: localizerStrings.success,
+                text: localizerStrings.appointmentCreated,
+                confirmButtonText: localizerStrings.ok
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit(); 
+                }
             });
-
-            e.preventDefault();
         });
-
     });
 </script>

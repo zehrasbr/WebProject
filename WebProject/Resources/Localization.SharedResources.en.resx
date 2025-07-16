@@ -555,6 +555,9 @@
   <data name="Role_Zehra" xml:space="preserve">
     <value>Full Stack Developer</value>
   </data>
+  <data name="Role_Zuhal" xml:space="preserve">
+    <value>Technical Support</value>
+  </data>
   <data name="SampleCourseContent" xml:space="preserve">
     <value>Sample Course Content</value>
   </data>
