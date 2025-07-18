@@ -11,8 +11,8 @@ using WebProject.Data;
 namespace WebProject.Migrations
 {
     [DbContext(typeof(RRLContext))]
-    [Migration("20250709110901_mig1")]
-    partial class mig1
+    [Migration("20250718141058_mig3")]
+    partial class mig3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,6 +55,39 @@ namespace WebProject.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Appointments");
+                });
+
+            modelBuilder.Entity("WebProject.Models.Email", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubjectType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Emails");
                 });
 #pragma warning restore 612, 618
         }

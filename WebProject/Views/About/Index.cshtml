@@ -16,7 +16,64 @@
         </nav>
     </div>
 </div>
+<!-- About Section -->
+<section id="about" class="about section">
 
-@await Component.InvokeAsync("_DefaultAboutComponentPartial")
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>@localizer["AboutTitle"]</h2>
+    </div><!-- End Section Title -->
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-11 content" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                    @localizer["AboutDescription"]
+                </p>
+                <ul>
+                    <li><i class="bi bi-check2-circle"></i> <span>@localizer["AboutFeature1"]</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-@await Component.InvokeAsync("_DefaultWhyUsComponentPartial")
+</section><!-- /About Section -->
+<!-- Why Us Section -->
+<section id="why-us" class="section why-us light-background" data-builder="section">
+    <div class="container-fluid">
+        <div class="row gy-4">
+
+            <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+                <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="faq-item faq-active">
+                        <h3><span></span>@localizer["WhyUs1Title"]</h3>
+                        <div class="faq-content">
+                            <p>@localizer["WhyUs1Content"]</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div><!-- End Faq item-->
+
+                    <div class="faq-item">
+                        <h3><span></span>@localizer["WhyUs2Title"]</h3>
+                        <div class="faq-content">
+                            <p>@localizer["WhyUs2Content"]</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div><!-- End Faq item-->
+
+                    <div class="faq-item">
+                        <h3><span></span>@localizer["WhyUs3Title"]</h3>
+                        <div class="faq-content">
+                            <p>@localizer["WhyUs3Content"]</p>
+                        </div>
+                        <i class="faq-toggle bi bi-chevron-right"></i>
+                    </div><!-- End Faq item-->
+
+                </div>
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 why-us-img">
+                <img src="~/web/assets/img/img11.png" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100" style="width: 120%; max-width: none;">
+            </div>
+        </div>
+    </div>
+</section><!-- /Why Us Section -->

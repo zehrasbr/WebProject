@@ -154,7 +154,6 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const timeSlots = [
@@ -167,15 +166,7 @@
             { start: "17:00", end: "17:50" }
         ];
 
-        const bookedSlots = {
-            "2025-07-08": ["09:00", "14:00"],
-            "2025-07-09": ["11:00", "15:00", "16:00"],
-            "2025-07-10": ["11:00", "15:00", "16:00"],
-            "2025-07-11": ["11:00", "13:00"],
-            "2025-07-12": ["09:00", "16:00"],
-            "2025-07-13": ["11:00", "17:00"],
-            "2025-07-14": ["09:00", "16:00"]
-        };
+        const bookedSlots = {};
 
         const calendarEl = document.getElementById('calendar');
         const timeSlotsContEl = document.getElementById('timeSlotsContainer');
@@ -194,13 +185,56 @@
             ok: '@localizer["OK"]'
         };
 
-        modalEl.addEventListener('shown.bs.modal', () => {
+        async function fetchBookedSlots() {
+            try {
+                const response = await fetch('@Url.Action("GetReservedDates", "Appointment")');
+                if (!response.ok) throw new Error("Rezervasyon verisi alınamadı.");
+
+                const data = await response.json();
+
+                data.forEach(dateTimeStr => {
+                    const [datePart, timePart] = dateTimeStr.split(' ');
+                    const startTime = timePart.split(' - ')[0];
+
+                    if (!bookedSlots[datePart]) {
+                        bookedSlots[datePart] = [];
+                    }
+                    if (!bookedSlots[datePart].includes(startTime)) {
+                        bookedSlots[datePart].push(startTime);
+                    }
+                });
+            } catch (error) {
+                console.error('Rezervasyon verisi alınırken hata:', error);
+            }
+        }
+
+        modalEl.addEventListener('shown.bs.modal', async () => {
             if (!calendar) {
+                await fetchBookedSlots();
+
                 calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
                     height: 500,
                     selectable: true,
                     dateClick(info) {
+                        const clickedDate = new Date(info.dateStr);
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+
+                        if (clickedDate < today) {
+                            timeSlotsContEl.innerHTML = '';
+                            dateTimeInput.value = '';
+                            if (selectedDate) {
+                                const existing = calendar.getEventById(`event-${selectedDate}`);
+                                if (existing) {
+                                    existing.remove();
+                                    events = events.filter(e => e.id !== existing.id);
+                                }
+                                selectedDate = null;
+                            }
+                            return;
+                        }
+
                         if (selectedDate && selectedDate !== info.dateStr) {
                             const existing = calendar.getEventById(`event-${selectedDate}`);
                             if (existing) {
@@ -234,6 +268,7 @@
             if (!dateStr) return;
 
             const booked = bookedSlots[dateStr] || [];
+
             timeSlots.forEach(slot => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
@@ -275,7 +310,7 @@
         }
 
         document.getElementById('appointmentForm').addEventListener('submit', function (e) {
-            e.preventDefault(); 
+            e.preventDefault();
 
             Swal.fire({
                 icon: 'success',
@@ -284,9 +319,10 @@
                 confirmButtonText: localizerStrings.ok
             }).then((result) => {
                 if (result.isConfirmed) {
-                    this.submit(); 
+                    this.submit();
                 }
             });
         });
     });
+
 </script>

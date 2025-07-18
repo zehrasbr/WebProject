@@ -1,6 +1,14 @@
-﻿<!-- Clients Section -->
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+
+<!-- Clients Section -->
 <section id="clients" class="clients section light-background">
+@*     <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up" style="margin-bottom: 0;">
+        <h2 style="margin-bottom: 0;">@localizer["BusinessPartners"]</h2>
+    </div><!-- End Section Title --> *@
     <div class="container" data-aos="zoom-in">
+
         <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
                 {
@@ -40,17 +48,62 @@
                 }
             </script>
 
-            <div class="swiper-wrapper justify-content-center align-items-center text-center">
-                <div class="swiper-slide d-flex justify-content-center align-items-center">
-                    <img src="~/web/assets/img/gazi.png" class="img-fluid" alt="">
-                </div>
-                <div class="swiper-slide d-flex justify-content-center align-items-center">
-                    <img src="~/web/assets/img/kut.jpeg" class="img-fluid" alt="">
-                </div>
-                <div class="swiper-slide d-flex justify-content-center align-items-center">
-                    <img src="~/web/assets/img/ostim.png" class="img-fluid" alt="">
-                </div>
+            <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide"><img src="~/web/assets/img/gazi.png" class="img-fluid logo-image" alt="" style="max-width: 90px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/kut.png" class="img-fluid logo-image" alt="" style="max-width: 250px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/ostim.png" class="img-fluid logo-image" alt="" style="max-width: 155px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/cge.png" class="img-fluid logo-image" alt="" style="max-width: 120px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/yiri.png" class="img-fluid logo-image" alt="" style="max-width: 95px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/tubitak.png" class="img-fluid logo-image" alt="" style="max-width: 95px;"></div>
             </div>
         </div>
+
     </div>
+
 </section>
+
+<!-- Stil -->
+<style>
+    .logo-image {
+        max-height: 80px;
+        object-fit: contain;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .swiper-wrapper {
+        min-height: 150px;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll("#clients img");
+        let loaded = 0;
+
+        images.forEach(img => {
+            if (img.complete) {
+                loaded++;
+            } else {
+                img.onload = () => {
+                    loaded++;
+                    if (loaded === images.length) {
+                        triggerSwiperUpdate();
+                    }
+                };
+            }
+        });
+
+        if (loaded === images.length) {
+            triggerSwiperUpdate();
+        }
+
+        function triggerSwiperUpdate() {
+            if (window.swiperInstances && window.swiperInstances.length > 0) {
+                window.swiperInstances.forEach(swiper => swiper.update());
+            }
+        }
+    });
+</script>

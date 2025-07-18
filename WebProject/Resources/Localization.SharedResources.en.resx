@@ -156,6 +156,9 @@
   <data name="BreadcrumbServices" xml:space="preserve">
     <value>Services</value>
   </data>
+  <data name="BusinessPartners" xml:space="preserve">
+    <value>Business Partners</value>
+  </data>
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Change Language</value>
   </data>

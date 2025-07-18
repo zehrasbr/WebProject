@@ -5,7 +5,7 @@
 namespace WebProject.Migrations
 {
     /// <inheritdoc />
-    public partial class mig1 : Migration
+    public partial class mig3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,6 +26,23 @@ namespace WebProject.Migrations
                 {
                     table.PrimaryKey("PK_Appointments", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Emails",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Mail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Subject = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SubjectType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Emails", x => x.Id);
+                });
         }
 
         /// <inheritdoc />
@@ -33,6 +50,9 @@ namespace WebProject.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Appointments");
+
+            migrationBuilder.DropTable(
+                name: "Emails");
         }
     }
 }

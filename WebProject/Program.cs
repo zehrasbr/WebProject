@@ -1,16 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using WebProject.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// ? Localization servisi tanýmý
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-// ? MVC + view localization
 builder.Services.AddControllersWithViews()
     .AddViewLocalization()
     .AddDataAnnotationsLocalization();
 
+builder.Services.AddDbContext<RRLContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
 var app = builder.Build();
 
-// ? Dil desteði kültürleri
+// Dil
 var supportedCultures = new[] { "tr", "en" };
 var localizationOptions = new RequestLocalizationOptions()
     .SetDefaultCulture("tr")
@@ -19,7 +24,6 @@ var localizationOptions = new RequestLocalizationOptions()
 
 app.UseRequestLocalization(localizationOptions);
 
-// Diðer middlewareler
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -31,9 +35,9 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-// Route
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

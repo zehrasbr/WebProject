@@ -1,0 +1,87 @@
+﻿@using WebProject.Localization
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResources> localizer
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+
+<div class="page-title" data-aos="fade">
+    <div class="container">
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a href="/Default/Index/">@localizer["Home"]</a></li>
+                <li class="current">@localizer["BusinessPartners"]</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Clients Section -->
+<section id="clients" class="clients section light-background">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up" style="margin-bottom: 0;">
+        <h2 style="margin-bottom: 0;">@localizer["BusinessPartners"]</h2>
+    </div><!-- End Section Title -->
+    <div class="container" data-aos="zoom-in">
+
+        <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "breakpoints": {
+                    "320": {
+                      "slidesPerView": 2,
+                      "spaceBetween": 40
+                    },
+                    "480": {
+                      "slidesPerView": 3,
+                      "spaceBetween": 60
+                    },
+                    "640": {
+                      "slidesPerView": 4,
+                      "spaceBetween": 80
+                    },
+                    "992": {
+                      "slidesPerView": 5,
+                      "spaceBetween": 120
+                    },
+                    "1200": {
+                      "slidesPerView": 6,
+                      "spaceBetween": 120
+                    }
+                  }
+                }
+            </script>
+            <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide"><img src="~/web/assets/img/gazi.png" class="img-fluid" alt="" ></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/kut.png" class="img-fluid" alt="" style="max-width: 150px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/ostim.png" class="img-fluid" alt="" style="max-width: 180px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/cge.png" class="img-fluid" alt="" style="max-width: 150px;"></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/yiri.png" class="img-fluid" alt=""></div>
+                <div class="swiper-slide"><img src="~/web/assets/img/tubitak.png" class="img-fluid" alt=""></div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+
+    </div>
+
+</section><!-- /Clients Section -->
